@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2F542AB-804A-44B5-9282-9A6B25C109F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PatientJourney.DataAccess</RootNamespace>
+    <AssemblyName>PatientJourney.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\ChartListDSForPJ.cs" />
+    <Compile Include="DataAccess\dbAuditAdministration.cs" />
+    <Compile Include="DataAccess\dbAuthentication.cs" />
+    <Compile Include="DataAccess\dbMasterData.cs" />
+    <Compile Include="DataAccess\dbPatientAdministration.cs" />
+    <Compile Include="DataAccess\dbPatientJourney.cs" />
+    <Compile Include="DataAccess\dbStrategicMoment.cs" />
+    <Compile Include="DataAccess\dbUserAdministration.cs" />
+    <Compile Include="DataAccess\dbVisualJourney.cs" />
+    <Compile Include="DataAccess\DefaultListDSForPJ.cs" />
+    <Compile Include="Data\Archetype_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Area_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Brand_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Clinical_Intervention_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Country_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Favourite_Search.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Favourite_Search_Archetype.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Favourite_Search_Area.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Favourite_Search_Brand.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Favourite_Search_Country.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Image_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Indication_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Journey_Pdf.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Journey_Pdf_TempData.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_HCP_Insights.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_HCP_Insights_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Patient_Insights.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Patient_Insights_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Payor_Insights.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Payor_Insights_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Stages.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Stages_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Strategic_Moment.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Strategic_Moment_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Transactions.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Transactions_AssociatedCosts.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Transactions_AssociatedCosts_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Transactions_DesiredOutcomes.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Transactions_DesiredOutcomes_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Transactions_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Trans_Clin_Interventions.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Trans_Clin_Interventions_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Trans_SubClin_Interventions.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_Trans_SubClin_Interventions_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_VersionDetails.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Patient_Journey_VersionDetails_Temp.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PJ_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PJ_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PJ_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PJ_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PJ_Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Role_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Stage_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Status_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SubClinical_Intervention_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SubTherapeutic_Area_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Therapeutic_Area_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Transaction_Location_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Transaction_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\User.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\User_Country_Association.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\User_Logon_Audit.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\User_Logon_Audit_MS.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\User_Roles.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Year_Master.cs">
+      <DependentUpon>PJ_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PatientJourney.BusinessModel\PatientJourney.BusinessModel.csproj">
+      <Project>{a27fe86e-9fec-4ddc-b8bb-a12ed3364522}</Project>
+      <Name>PatientJourney.BusinessModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Data\PJ_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PJ_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\PJ_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PJ_Model.edmx</DependentUpon>
+      <LastGenOutput>PJ_Model.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Data\PJ_Model.edmx.diagram">
+      <DependentUpon>PJ_Model.edmx</DependentUpon>
+    </None>
+    <None Include="Data\PJ_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PJ_Model.edmx</DependentUpon>
+      <LastGenOutput>PJ_Model.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

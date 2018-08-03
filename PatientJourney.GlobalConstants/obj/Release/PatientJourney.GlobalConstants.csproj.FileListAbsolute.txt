@@ -1,0 +1,7 @@
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.GlobalConstants\bin\Release\PatientJourney.GlobalConstants.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.GlobalConstants\bin\Release\PatientJourney.GlobalConstants.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.GlobalConstants\bin\Release\PatientJourney.BusinessModel.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.GlobalConstants\bin\Release\PatientJourney.BusinessModel.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.GlobalConstants\obj\Release\PatientJourney.GlobalConstants.csprojResolveAssemblyReference.cache
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.GlobalConstants\obj\Release\PatientJourney.GlobalConstants.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.GlobalConstants\obj\Release\PatientJourney.GlobalConstants.pdb

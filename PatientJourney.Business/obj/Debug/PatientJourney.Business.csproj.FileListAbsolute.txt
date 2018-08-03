@@ -1,0 +1,15 @@
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\PatientJourney.Business.dll.config
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\PatientJourney.Business.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\PatientJourney.Business.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\EntityFramework.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\PatientJourney.BusinessModel.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\PatientJourney.DataAccess.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\PatientJourney.GlobalConstants.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\System.DirectoryServices.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\PatientJourney.BusinessModel.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\PatientJourney.DataAccess.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\PatientJourney.GlobalConstants.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\bin\Debug\EntityFramework.xml
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\obj\Debug\PatientJourney.Business.csprojResolveAssemblyReference.cache
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\obj\Debug\PatientJourney.Business.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.Business\obj\Debug\PatientJourney.Business.pdb

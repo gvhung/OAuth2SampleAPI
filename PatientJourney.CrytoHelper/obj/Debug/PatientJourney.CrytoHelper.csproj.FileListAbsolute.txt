@@ -1,0 +1,4 @@
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.CrytoHelper\bin\Debug\PatientJourney.CrytoHelper.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.CrytoHelper\bin\Debug\PatientJourney.CrytoHelper.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.CrytoHelper\obj\Debug\PatientJourney.CrytoHelper.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.CrytoHelper\obj\Debug\PatientJourney.CrytoHelper.pdb

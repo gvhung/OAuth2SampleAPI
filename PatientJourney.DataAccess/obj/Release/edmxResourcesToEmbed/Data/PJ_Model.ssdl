@@ -1,0 +1,2304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PatientSpectrumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Archetype_Master">
+    <Key>
+      <PropertyRef Name="Archetype_Master_Id" />
+    </Key>
+    <Property Name="Archetype_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Archetype_Name" Type="varchar" MaxLength="255" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Area_Master">
+    <Key>
+      <PropertyRef Name="Area_Master_Id" />
+    </Key>
+    <Property Name="Area_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Area_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Archetype_Master_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Brand_Master">
+    <Key>
+      <PropertyRef Name="Brand_Master_Id" />
+    </Key>
+    <Property Name="Brand_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Therapeutic_Area_Master_Id" Type="int" />
+    <Property Name="SubTherapeutic_Area_Master_Id" Type="int" />
+    <Property Name="Indication_Master_Id" Type="int" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Clinical_Intervention_Master">
+    <Key>
+      <PropertyRef Name="Clinical_Intervention_Master_Id" />
+    </Key>
+    <Property Name="Clinical_Intervention_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Image_Master_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Country_Master">
+    <Key>
+      <PropertyRef Name="Country_Master_Id" />
+    </Key>
+    <Property Name="Country_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Area_Master_Id" Type="int" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Archetype_Master_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Favourite_Search">
+    <Key>
+      <PropertyRef Name="Favourite_Search_Id" />
+    </Key>
+    <Property Name="Favourite_Search_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="int" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Therapeutic_Area_Master_Id" Type="int" />
+    <Property Name="SubTherapeutic_Area_Master_Id" Type="int" />
+    <Property Name="Indication_Master_Id" Type="int" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Favourite_Search_Archetype">
+    <Key>
+      <PropertyRef Name="Favourite_Search_Archetype_Id" />
+    </Key>
+    <Property Name="Favourite_Search_Archetype_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="int" />
+    <Property Name="Favourite_Search_Id" Type="int" />
+    <Property Name="Archetype_Master_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Favourite_Search_Area">
+    <Key>
+      <PropertyRef Name="Favourite_Search_Area_Id" />
+    </Key>
+    <Property Name="Favourite_Search_Area_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="int" />
+    <Property Name="Favourite_Search_Id" Type="int" />
+    <Property Name="Area_Master_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Favourite_Search_Brand">
+    <Key>
+      <PropertyRef Name="Favourite_Search_Brand_Id" />
+    </Key>
+    <Property Name="Favourite_Search_Brand_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="int" />
+    <Property Name="Favourite_Search_Id" Type="int" />
+    <Property Name="Brand_Master_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Favourite_Search_Country">
+    <Key>
+      <PropertyRef Name="Favourite_Search_Country_Id" />
+    </Key>
+    <Property Name="Favourite_Search_Country_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="int" />
+    <Property Name="Favourite_Search_Id" Type="int" />
+    <Property Name="Country_Master_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Image_Master">
+    <Key>
+      <PropertyRef Name="Image_Master_Id" />
+    </Key>
+    <Property Name="Image_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Image_Path" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Image_Description" Type="varchar" MaxLength="255" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Indication_Master">
+    <Key>
+      <PropertyRef Name="Indication_Master_Id" />
+    </Key>
+    <Property Name="Indication_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Indication_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Therapeutic_Area_Master_Id" Type="int" />
+    <Property Name="SubTherapeutic_Area_Master_Id" Type="int" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Journey_Pdf">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand_Id" Type="int" Nullable="false" />
+    <Property Name="Country_Id" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Pdf_Byte" Type="varbinary(max)" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Journey_Pdf_TempData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country_Id" Type="int" Nullable="false" />
+    <Property Name="Brand_Id" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="UserName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient_Journey">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Journey_Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Brand_Master_Id" Type="int" />
+    <Property Name="Country_Master_Id" Type="int" />
+    <Property Name="Status_Master_Id" Type="int" />
+    <Property Name="User_Comments" Type="varchar" MaxLength="255" />
+    <Property Name="Approver_Comments" Type="varchar" MaxLength="255" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Submitted_By" Type="varchar" MaxLength="255" />
+    <Property Name="Submitted_Date" Type="datetime" />
+    <Property Name="Approved_By" Type="varchar" MaxLength="255" />
+    <Property Name="Approved_Date" Type="datetime" />
+    <Property Name="Journey_Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_HCP_Insights">
+    <Key>
+      <PropertyRef Name="Patient_Journey_HCP_Insights_Id" />
+    </Key>
+    <Property Name="Patient_Journey_HCP_Insights_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Journey_Transactions_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" />
+    <Property Name="HCP_Insights" Type="nvarchar(max)" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_HCP_Insights_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_HCP_Insights_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_HCP_Insights_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="HCP_Insights" Type="nvarchar(max)" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Patient_Insights">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Patient_Insights_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Patient_Insights_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Journey_Transactions_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" />
+    <Property Name="Patient_Insights" Type="nvarchar(max)" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Patient_Insights_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Patient_Insights_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Patient_Insights_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Insights" Type="nvarchar(max)" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Payor_Insights">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Payor_Insights_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Payor_Insights_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Journey_Transactions_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" />
+    <Property Name="Payor_Insights" Type="nvarchar(max)" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Payor_Insights_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Payor_Insights_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Payor_Insights_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Payor_Insights" Type="nvarchar(max)" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Stages">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Stages_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Stages_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Id" Type="int" />
+    <Property Name="Stage_Master_Id" Type="int" />
+    <Property Name="Stage_Title" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Stage_Display_Order" Type="int" />
+    <Property Name="Population_Statistics" Type="int" Nullable="false" />
+    <Property Name="Time_Statistics" Type="int" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Patient_Journey_Stages_Temp_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Stages_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Stages_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Stages_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Stage_Master_Id" Type="int" Nullable="false" />
+    <Property Name="Stage_Title" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Stage_Display_Order" Type="int" Nullable="false" />
+    <Property Name="Population_Statistics" Type="int" Nullable="false" />
+    <Property Name="Time_Statistics" Type="int" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Patient_Journey_Stages_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Strategic_Moment">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Strategic_Moment_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Strategic_Moment_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Start_Stage_Id" Type="int" />
+    <Property Name="Patient_Journey_End_Stage_Id" Type="int" />
+    <Property Name="Patient_Journey_Start_Transaction_Id" Type="int" />
+    <Property Name="Patient_Journey_End_Transaction_Id" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Patient_Journey_Id" Type="int" />
+    <Property Name="Category" Type="varchar" MaxLength="255" />
+    <Property Name="Patient_Journey_Strategic_Moment_Temp_Id" Type="int" />
+    <Property Name="Title" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Strategic_Moment_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Strategic_Moment_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Strategic_Moment_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Start_Stage_Temp_Id" Type="int" />
+    <Property Name="Patient_Journey_End_Stage_Temp_Id" Type="int" />
+    <Property Name="Patient_Journey_Start_Transaction_Temp_Id" Type="int" />
+    <Property Name="Patient_Journey_End_Transaction_Temp_Id" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Patient_Journey_Temp_Id" Type="int" />
+    <Property Name="Category" Type="varchar" MaxLength="255" />
+    <Property Name="Title" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Journey_Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Patient_Journey_Id" Type="int" Nullable="false" />
+    <Property Name="Brand_Master_Id" Type="int" Nullable="false" />
+    <Property Name="Country_Master_Id" Type="int" Nullable="false" />
+    <Property Name="Status_Master_Id" Type="int" Nullable="false" />
+    <Property Name="User_Comments" Type="varchar" MaxLength="255" />
+    <Property Name="Approver_Comments" Type="varchar" MaxLength="255" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Submitted_By" Type="varchar" MaxLength="255" />
+    <Property Name="Submitted_Date" Type="datetime" />
+    <Property Name="Approved_By" Type="varchar" MaxLength="255" />
+    <Property Name="Approved_Date" Type="datetime" />
+    <Property Name="Journey_Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Trans_Clin_Interventions">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Trans_Clin_Interventions_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Trans_Clin_Interventions_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Clinical_Intervention_Master_Id" Type="int" />
+    <Property Name="Patient_Journey_Transactions_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Trans_Clin_Interventions_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Trans_Clin_Interventions_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Trans_Clin_Interventions_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Clinical_Intervention_Master_Id" Type="int" />
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Trans_SubClin_Interventions">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Trans_SubClin_Interventions_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Trans_SubClin_Interventions_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Trans_Clin_Interventions_Id" Type="int" Nullable="false" />
+    <Property Name="SubClinical_Intervention_Master_Id" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Trans_SubClin_Interventions_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Trans_SubClin_Interventions_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Trans_SubClin_Interventions_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Trans_Clin_Interventions_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="SubClinical_Intervention_Master_Id" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Transactions">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Transactions_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Transactions_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Transaction_Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Patient_Journey_Id" Type="int" />
+    <Property Name="Patient_Journey_Stages_Id" Type="int" />
+    <Property Name="Transaction_Master_Id" Type="int" />
+    <Property Name="Transaction_Location_Master_Id" Type="int" />
+    <Property Name="Transaction_Display_Order" Type="int" />
+    <Property Name="Transaction_Location_Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="HCP_Rating" Type="int" Nullable="false" />
+    <Property Name="Payer_Rating" Type="int" Nullable="false" />
+    <Property Name="Patient_Rating" Type="int" Nullable="false" />
+    <Property Name="Feasibility_Rating" Type="int" Nullable="false" />
+    <Property Name="Viability_Rating" Type="int" Nullable="false" />
+    <Property Name="HCP_Description" Type="nvarchar(max)" />
+    <Property Name="Payer_Description" Type="nvarchar(max)" />
+    <Property Name="Patient_Description" Type="nvarchar(max)" />
+    <Property Name="Feasibility_Description" Type="nvarchar(max)" />
+    <Property Name="Viability_Description" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Patient_Evidence" Type="nvarchar(max)" />
+    <Property Name="HCP_Evidence" Type="nvarchar(max)" />
+    <Property Name="Payer_Evidence" Type="nvarchar(max)" />
+    <Property Name="Feasibility_Evidence" Type="nvarchar(max)" />
+    <Property Name="Viability_Evidence" Type="nvarchar(max)" />
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Transactions_AssociatedCosts">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Transactions_AssociatedCosts_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Transactions_AssociatedCosts_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssociatedCosts" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Patient_Journey_Transactions_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Transactions_AssociatedCosts_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Transactions_AssociatedCosts_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Transactions_AssociatedCosts_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssociatedCosts" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Transactions_DesiredOutcomes">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Transactions_DesiredOutcomes_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Transactions_DesiredOutcomes_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesiredOutcomes" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Patient_Journey_Transactions_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="MODIFIED_By" Type="varchar" MaxLength="50" />
+    <Property Name="MODIFIED_Date" Type="datetime" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Transactions_DesiredOutcomes_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Transactions_DesiredOutcomes_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Transactions_DesiredOutcomes_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesiredOutcomes" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="MODIFIED_By" Type="varchar" MaxLength="50" />
+    <Property Name="MODIFIED_Date" Type="datetime" />
+    <Property Name="Evidence" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_Transactions_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_Transactions_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Transaction_Title" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Patient_Journey_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Journey_Stages_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Transaction_Master_Id" Type="int" Nullable="false" />
+    <Property Name="Transaction_Location_Master_Id" Type="int" Nullable="false" />
+    <Property Name="Transaction_Display_Order" Type="int" Nullable="false" />
+    <Property Name="Transaction_Location_Title" Type="varchar" MaxLength="255" />
+    <Property Name="HCP_Rating" Type="int" Nullable="false" />
+    <Property Name="Payer_Rating" Type="int" Nullable="false" />
+    <Property Name="Patient_Rating" Type="int" Nullable="false" />
+    <Property Name="Feasibility_Rating" Type="int" Nullable="false" />
+    <Property Name="Viability_Rating" Type="int" Nullable="false" />
+    <Property Name="HCP_Description" Type="nvarchar(max)" />
+    <Property Name="Payer_Description" Type="nvarchar(max)" />
+    <Property Name="Patient_Description" Type="nvarchar(max)" />
+    <Property Name="Feasibility_Description" Type="nvarchar(max)" />
+    <Property Name="Viability_Description" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Patient_Evidence" Type="nvarchar(max)" />
+    <Property Name="HCP_Evidence" Type="nvarchar(max)" />
+    <Property Name="Payer_Evidence" Type="nvarchar(max)" />
+    <Property Name="Feasibility_Evidence" Type="nvarchar(max)" />
+    <Property Name="Viability_Evidence" Type="nvarchar(max)" />
+    <Property Name="Patient_Journey_Transactions_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_VersionDetails">
+    <Key>
+      <PropertyRef Name="Patient_Journey_VersionDetails_Id" />
+    </Key>
+    <Property Name="Patient_Journey_VersionDetails_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Id" Type="int" />
+    <Property Name="Version_Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Version_Comments" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Journey_VersionDetails_Temp">
+    <Key>
+      <PropertyRef Name="Patient_Journey_VersionDetails_Temp_Id" />
+    </Key>
+    <Property Name="Patient_Journey_VersionDetails_Temp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Journey_Temp_Id" Type="int" Nullable="false" />
+    <Property Name="Version_Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Version_Comments" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="IsApproved" Type="bit" />
+  </EntityType>
+  <EntityType Name="Role_Master">
+    <Key>
+      <PropertyRef Name="Role_Master_Id" />
+    </Key>
+    <Property Name="Role_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role_Description" Type="varchar" MaxLength="255" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Stage_Master">
+    <Key>
+      <PropertyRef Name="Stage_Master_Id" />
+    </Key>
+    <Property Name="Stage_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stage_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Stage_Description" Type="varchar" MaxLength="255" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Status_Master">
+    <Key>
+      <PropertyRef Name="Status_Master_Id" />
+    </Key>
+    <Property Name="Status_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SubClinical_Intervention_Master">
+    <Key>
+      <PropertyRef Name="SubClinical_Intervention_Master_Id" />
+    </Key>
+    <Property Name="SubClinical_Intervention_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Image_Master_Id" Type="int" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SubTherapeutic_Area_Master">
+    <Key>
+      <PropertyRef Name="SubTherapeutic_Area_Master_Id" />
+    </Key>
+    <Property Name="SubTherapeutic_Area_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubTherapeutic_Area_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Therapeutic_Area_Master_Id" Type="int" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Therapeutic_Area_Master">
+    <Key>
+      <PropertyRef Name="Therapeutic_Area_Master_Id" />
+    </Key>
+    <Property Name="Therapeutic_Area_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Therapeutic_Area_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Transaction_Location_Master">
+    <Key>
+      <PropertyRef Name="Transaction_Location_Master_Id" />
+    </Key>
+    <Property Name="Transaction_Location_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Location_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Location_Description" Type="varchar" MaxLength="255" />
+    <Property Name="Image_Master_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Transaction_Master">
+    <Key>
+      <PropertyRef Name="Transaction_Master_Id" />
+    </Key>
+    <Property Name="Transaction_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Transaction_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Transaction_Description" Type="varchar" MaxLength="255" />
+    <Property Name="Image_Master_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Indication_Master_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="User_Country_Association">
+    <Key>
+      <PropertyRef Name="User_Country_Association_Id" />
+    </Key>
+    <Property Name="User_Country_Association_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country_Master_Id" Type="int" />
+    <Property Name="User_Id" Type="int" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User_Logon_Audit">
+    <Key>
+      <PropertyRef Name="User_Logon_Audit_Id" />
+    </Key>
+    <Property Name="User_Logon_Audit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_511" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UPI" Type="varchar" MaxLength="255" />
+    <Property Name="First_Name" Type="varchar" MaxLength="255" />
+    <Property Name="Middle_Initial" Type="varchar" MaxLength="255" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="255" />
+    <Property Name="Email_Id" Type="varchar" MaxLength="255" />
+    <Property Name="Logon_Client_Date" Type="datetimeoffset" Precision="7" />
+    <Property Name="Logon_UTC_Date" Type="datetimeoffset" Precision="7" />
+    <Property Name="Logon_Client_TimeZone" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetimeoffset" Precision="7" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetimeoffset" Precision="7" />
+  </EntityType>
+  <EntityType Name="User_Logon_Audit_MS">
+    <Key>
+      <PropertyRef Name="User_Logon_Audit_Id" />
+    </Key>
+    <Property Name="User_Logon_Audit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_511" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UPI" Type="varchar" MaxLength="255" />
+    <Property Name="First_Name" Type="varchar" MaxLength="255" />
+    <Property Name="Middle_Initial" Type="varchar" MaxLength="255" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="255" />
+    <Property Name="Email_Id" Type="varchar" MaxLength="255" />
+    <Property Name="Logon_Client_Date" Type="datetimeoffset" Precision="7" />
+    <Property Name="Logon_UTC_Date" Type="datetimeoffset" Precision="7" />
+    <Property Name="Logon_Client_TimeZone" Type="nvarchar(max)" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetimeoffset" Precision="7" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetimeoffset" Precision="7" />
+  </EntityType>
+  <EntityType Name="User_Roles">
+    <Key>
+      <PropertyRef Name="User_Roles_Id" />
+    </Key>
+    <Property Name="User_Roles_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+    <Property Name="Role_Master_Id" Type="int" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_511" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UPI" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="255" />
+    <Property Name="Middle_Initial" Type="varchar" MaxLength="255" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="255" />
+    <Property Name="Email_Id" Type="varchar(max)" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="varchar" MaxLength="255" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="255" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Year_Master">
+    <Key>
+      <PropertyRef Name="Year_Master_Id" />
+    </Key>
+    <Property Name="Year_Master_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Year_Name" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Modified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Area_Mast__Arche__7D63964E">
+    <End Role="Archetype_Master" Type="Self.Archetype_Master" Multiplicity="0..1" />
+    <End Role="Area_Master" Type="Self.Area_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Archetype_Master">
+        <PropertyRef Name="Archetype_Master_Id" />
+      </Principal>
+      <Dependent Role="Area_Master">
+        <PropertyRef Name="Archetype_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Brand_Mas__Indic__536D5C82">
+    <End Role="Indication_Master" Type="Self.Indication_Master" Multiplicity="0..1" />
+    <End Role="Brand_Master" Type="Self.Brand_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Indication_Master">
+        <PropertyRef Name="Indication_Master_Id" />
+      </Principal>
+      <Dependent Role="Brand_Master">
+        <PropertyRef Name="Indication_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Brand_Mas__SubTh__546180BB">
+    <End Role="SubTherapeutic_Area_Master" Type="Self.SubTherapeutic_Area_Master" Multiplicity="0..1" />
+    <End Role="Brand_Master" Type="Self.Brand_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubTherapeutic_Area_Master">
+        <PropertyRef Name="SubTherapeutic_Area_Master_Id" />
+      </Principal>
+      <Dependent Role="Brand_Master">
+        <PropertyRef Name="SubTherapeutic_Area_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Brand_Mas__Thera__5555A4F4">
+    <End Role="Therapeutic_Area_Master" Type="Self.Therapeutic_Area_Master" Multiplicity="0..1" />
+    <End Role="Brand_Master" Type="Self.Brand_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Therapeutic_Area_Master">
+        <PropertyRef Name="Therapeutic_Area_Master_Id" />
+      </Principal>
+      <Dependent Role="Brand_Master">
+        <PropertyRef Name="Therapeutic_Area_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Clinical___Image__5649C92D">
+    <End Role="Image_Master" Type="Self.Image_Master" Multiplicity="0..1" />
+    <End Role="Clinical_Intervention_Master" Type="Self.Clinical_Intervention_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image_Master">
+        <PropertyRef Name="Image_Master_Id" />
+      </Principal>
+      <Dependent Role="Clinical_Intervention_Master">
+        <PropertyRef Name="Image_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Country_M__Arche__7E57BA87">
+    <End Role="Archetype_Master" Type="Self.Archetype_Master" Multiplicity="0..1" />
+    <End Role="Country_Master" Type="Self.Country_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Archetype_Master">
+        <PropertyRef Name="Archetype_Master_Id" />
+      </Principal>
+      <Dependent Role="Country_Master">
+        <PropertyRef Name="Archetype_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Country_M__Area___573DED66">
+    <End Role="Area_Master" Type="Self.Area_Master" Multiplicity="0..1" />
+    <End Role="Country_Master" Type="Self.Country_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area_Master">
+        <PropertyRef Name="Area_Master_Id" />
+      </Principal>
+      <Dependent Role="Country_Master">
+        <PropertyRef Name="Area_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Country_M__Area___5832119F">
+    <End Role="Area_Master" Type="Self.Area_Master" Multiplicity="0..1" />
+    <End Role="Country_Master" Type="Self.Country_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area_Master">
+        <PropertyRef Name="Area_Master_Id" />
+      </Principal>
+      <Dependent Role="Country_Master">
+        <PropertyRef Name="Area_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__Arche__0504B816">
+    <End Role="Archetype_Master" Type="Self.Archetype_Master" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Archetype" Type="Self.Favourite_Search_Archetype" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Archetype_Master">
+        <PropertyRef Name="Archetype_Master_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Archetype">
+        <PropertyRef Name="Archetype_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__Area___5CF6C6BC">
+    <End Role="Area_Master" Type="Self.Area_Master" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Area" Type="Self.Favourite_Search_Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area_Master">
+        <PropertyRef Name="Area_Master_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Area">
+        <PropertyRef Name="Area_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__Brand__5FD33367">
+    <End Role="Brand_Master" Type="Self.Brand_Master" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Brand" Type="Self.Favourite_Search_Brand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand_Master">
+        <PropertyRef Name="Brand_Master_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Brand">
+        <PropertyRef Name="Brand_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__Count__62AFA012">
+    <End Role="Country_Master" Type="Self.Country_Master" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Country" Type="Self.Favourite_Search_Country" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_Master">
+        <PropertyRef Name="Country_Master_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Country">
+        <PropertyRef Name="Country_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__Favou__05F8DC4F">
+    <End Role="Favourite_Search" Type="Self.Favourite_Search" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Archetype" Type="Self.Favourite_Search_Archetype" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Favourite_Search">
+        <PropertyRef Name="Favourite_Search_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Archetype">
+        <PropertyRef Name="Favourite_Search_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__Favou__5DEAEAF5">
+    <End Role="Favourite_Search" Type="Self.Favourite_Search" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Area" Type="Self.Favourite_Search_Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Favourite_Search">
+        <PropertyRef Name="Favourite_Search_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Area">
+        <PropertyRef Name="Favourite_Search_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__Favou__60C757A0">
+    <End Role="Favourite_Search" Type="Self.Favourite_Search" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Brand" Type="Self.Favourite_Search_Brand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Favourite_Search">
+        <PropertyRef Name="Favourite_Search_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Brand">
+        <PropertyRef Name="Favourite_Search_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__Favou__63A3C44B">
+    <End Role="Favourite_Search" Type="Self.Favourite_Search" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Country" Type="Self.Favourite_Search_Country" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Favourite_Search">
+        <PropertyRef Name="Favourite_Search_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Country">
+        <PropertyRef Name="Favourite_Search_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__Indic__592635D8">
+    <End Role="Indication_Master" Type="Self.Indication_Master" Multiplicity="0..1" />
+    <End Role="Favourite_Search" Type="Self.Favourite_Search" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Indication_Master">
+        <PropertyRef Name="Indication_Master_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search">
+        <PropertyRef Name="Indication_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__SubTh__5A1A5A11">
+    <End Role="SubTherapeutic_Area_Master" Type="Self.SubTherapeutic_Area_Master" Multiplicity="0..1" />
+    <End Role="Favourite_Search" Type="Self.Favourite_Search" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubTherapeutic_Area_Master">
+        <PropertyRef Name="SubTherapeutic_Area_Master_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search">
+        <PropertyRef Name="SubTherapeutic_Area_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__Thera__5B0E7E4A">
+    <End Role="Therapeutic_Area_Master" Type="Self.Therapeutic_Area_Master" Multiplicity="0..1" />
+    <End Role="Favourite_Search" Type="Self.Favourite_Search" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Therapeutic_Area_Master">
+        <PropertyRef Name="Therapeutic_Area_Master_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search">
+        <PropertyRef Name="Therapeutic_Area_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__User___06ED0088">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Archetype" Type="Self.Favourite_Search_Archetype" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Archetype">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__User___5C02A283">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Favourite_Search" Type="Self.Favourite_Search" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__User___5EDF0F2E">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Area" Type="Self.Favourite_Search_Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Area">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__User___61BB7BD9">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Brand" Type="Self.Favourite_Search_Brand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Brand">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favourite__User___6497E884">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Favourite_Search_Country" Type="Self.Favourite_Search_Country" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Favourite_Search_Country">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Indicatio__SubTh__658C0CBD">
+    <End Role="SubTherapeutic_Area_Master" Type="Self.SubTherapeutic_Area_Master" Multiplicity="0..1" />
+    <End Role="Indication_Master" Type="Self.Indication_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubTherapeutic_Area_Master">
+        <PropertyRef Name="SubTherapeutic_Area_Master_Id" />
+      </Principal>
+      <Dependent Role="Indication_Master">
+        <PropertyRef Name="SubTherapeutic_Area_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Indicatio__Thera__668030F6">
+    <End Role="Therapeutic_Area_Master" Type="Self.Therapeutic_Area_Master" Multiplicity="0..1" />
+    <End Role="Indication_Master" Type="Self.Indication_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Therapeutic_Area_Master">
+        <PropertyRef Name="Therapeutic_Area_Master_Id" />
+      </Principal>
+      <Dependent Role="Indication_Master">
+        <PropertyRef Name="Therapeutic_Area_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Brand__3D491139">
+    <End Role="Brand_Master" Type="Self.Brand_Master" Multiplicity="1" />
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand_Master">
+        <PropertyRef Name="Brand_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Temp">
+        <PropertyRef Name="Brand_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Brand__6774552F">
+    <End Role="Brand_Master" Type="Self.Brand_Master" Multiplicity="0..1" />
+    <End Role="Patient_Journey" Type="Self.Patient_Journey" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand_Master">
+        <PropertyRef Name="Brand_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey">
+        <PropertyRef Name="Brand_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Clini__247D636F">
+    <End Role="Clinical_Intervention_Master" Type="Self.Clinical_Intervention_Master" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Trans_Clin_Interventions" Type="Self.Patient_Journey_Trans_Clin_Interventions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clinical_Intervention_Master">
+        <PropertyRef Name="Clinical_Intervention_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Trans_Clin_Interventions">
+        <PropertyRef Name="Clinical_Intervention_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Clini__4B973090">
+    <End Role="Clinical_Intervention_Master" Type="Self.Clinical_Intervention_Master" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Trans_Clin_Interventions_Temp" Type="Self.Patient_Journey_Trans_Clin_Interventions_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clinical_Intervention_Master">
+        <PropertyRef Name="Clinical_Intervention_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Trans_Clin_Interventions_Temp">
+        <PropertyRef Name="Clinical_Intervention_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Count__3E3D3572">
+    <End Role="Country_Master" Type="Self.Country_Master" Multiplicity="1" />
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_Master">
+        <PropertyRef Name="Country_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Temp">
+        <PropertyRef Name="Country_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Count__68687968">
+    <End Role="Country_Master" Type="Self.Country_Master" Multiplicity="0..1" />
+    <End Role="Patient_Journey" Type="Self.Patient_Journey" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_Master">
+        <PropertyRef Name="Country_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey">
+        <PropertyRef Name="Country_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__04CFADEC">
+    <End Role="Patient_Journey" Type="Self.Patient_Journey" Multiplicity="1" />
+    <End Role="Patient_Journey_Patient_Insights" Type="Self.Patient_Journey_Patient_Insights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Patient_Insights">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__05C3D225">
+    <End Role="Patient_Journey_Transactions" Type="Self.Patient_Journey_Transactions" Multiplicity="1" />
+    <End Role="Patient_Journey_Patient_Insights" Type="Self.Patient_Journey_Patient_Insights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Patient_Insights">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__08A03ED0">
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Patient_Insights_Temp" Type="Self.Patient_Journey_Patient_Insights_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Patient_Insights_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__09946309">
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Patient_Insights_Temp" Type="Self.Patient_Journey_Patient_Insights_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Patient_Insights_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__0BB1B5A5">
+    <End Role="Patient_Journey_Stages" Type="Self.Patient_Journey_Stages" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment" Type="Self.Patient_Journey_Strategic_Moment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Stages">
+        <PropertyRef Name="Patient_Journey_Stages_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment">
+        <PropertyRef Name="Patient_Journey_Start_Stage_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__0C70CFB4">
+    <End Role="Patient_Journey" Type="Self.Patient_Journey" Multiplicity="1" />
+    <End Role="Patient_Journey_HCP_Insights" Type="Self.Patient_Journey_HCP_Insights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_HCP_Insights">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__0CA5D9DE">
+    <End Role="Patient_Journey_Stages" Type="Self.Patient_Journey_Stages" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment" Type="Self.Patient_Journey_Strategic_Moment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Stages">
+        <PropertyRef Name="Patient_Journey_Stages_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment">
+        <PropertyRef Name="Patient_Journey_End_Stage_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__0D64F3ED">
+    <End Role="Patient_Journey_Transactions" Type="Self.Patient_Journey_Transactions" Multiplicity="1" />
+    <End Role="Patient_Journey_HCP_Insights" Type="Self.Patient_Journey_HCP_Insights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_HCP_Insights">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__0D99FE17">
+    <End Role="Patient_Journey_Transactions" Type="Self.Patient_Journey_Transactions" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment" Type="Self.Patient_Journey_Strategic_Moment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment">
+        <PropertyRef Name="Patient_Journey_Start_Transaction_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__0E8E2250">
+    <End Role="Patient_Journey_Transactions" Type="Self.Patient_Journey_Transactions" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment" Type="Self.Patient_Journey_Strategic_Moment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment">
+        <PropertyRef Name="Patient_Journey_End_Transaction_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__10416098">
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_HCP_Insights_Temp" Type="Self.Patient_Journey_HCP_Insights_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_HCP_Insights_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__113584D1">
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_HCP_Insights_Temp" Type="Self.Patient_Journey_HCP_Insights_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_HCP_Insights_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__16EE5E27">
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Payor_Insights_Temp" Type="Self.Patient_Journey_Payor_Insights_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Payor_Insights_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__17E28260">
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Payor_Insights_Temp" Type="Self.Patient_Journey_Payor_Insights_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Payor_Insights_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__1ABEEF0B">
+    <End Role="Patient_Journey" Type="Self.Patient_Journey" Multiplicity="1" />
+    <End Role="Patient_Journey_Payor_Insights" Type="Self.Patient_Journey_Payor_Insights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Payor_Insights">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__1BB31344">
+    <End Role="Patient_Journey_Transactions" Type="Self.Patient_Journey_Transactions" Multiplicity="1" />
+    <End Role="Patient_Journey_Payor_Insights" Type="Self.Patient_Journey_Payor_Insights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Payor_Insights">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__257187A8">
+    <End Role="Patient_Journey" Type="Self.Patient_Journey" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment" Type="Self.Patient_Journey_Strategic_Moment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__379037E3">
+    <End Role="Patient_Journey_Trans_Clin_Interventions" Type="Self.Patient_Journey_Trans_Clin_Interventions" Multiplicity="1" />
+    <End Role="Patient_Journey_Trans_SubClin_Interventions" Type="Self.Patient_Journey_Trans_SubClin_Interventions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Trans_Clin_Interventions">
+        <PropertyRef Name="Patient_Journey_Trans_Clin_Interventions_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Trans_SubClin_Interventions">
+        <PropertyRef Name="Patient_Journey_Trans_Clin_Interventions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__3C54ED00">
+    <End Role="Patient_Journey" Type="Self.Patient_Journey" Multiplicity="1" />
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Temp">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__420DC656">
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Stages_Temp" Type="Self.Patient_Journey_Stages_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Stages_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__45DE573A">
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__46D27B73">
+    <End Role="Patient_Journey_Stages_Temp" Type="Self.Patient_Journey_Stages_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Stages_Temp">
+        <PropertyRef Name="Patient_Journey_Stages_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Patient_Journey_Stages_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__4C8B54C9">
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Trans_Clin_Interventions_Temp" Type="Self.Patient_Journey_Trans_Clin_Interventions_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Trans_Clin_Interventions_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__4F67C174">
+    <End Role="Patient_Journey_Trans_Clin_Interventions_Temp" Type="Self.Patient_Journey_Trans_Clin_Interventions_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Trans_SubClin_Interventions_Temp" Type="Self.Patient_Journey_Trans_SubClin_Interventions_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Trans_Clin_Interventions_Temp">
+        <PropertyRef Name="Patient_Journey_Trans_Clin_Interventions_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Trans_SubClin_Interventions_Temp">
+        <PropertyRef Name="Patient_Journey_Trans_Clin_Interventions_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__53385258">
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Transactions_AssociatedCosts_Temp" Type="Self.Patient_Journey_Transactions_AssociatedCosts_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Transactions_AssociatedCosts_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__5614BF03">
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_Transactions_DesiredOutcomes_Temp" Type="Self.Patient_Journey_Transactions_DesiredOutcomes_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Transactions_DesiredOutcomes_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__58F12BAE">
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="1" />
+    <End Role="Patient_Journey_VersionDetails_Temp" Type="Self.Patient_Journey_VersionDetails_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_VersionDetails_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__6A50C1DA">
+    <End Role="Patient_Journey" Type="Self.Patient_Journey" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Stages" Type="Self.Patient_Journey_Stages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Stages">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__6E2152BE">
+    <End Role="Patient_Journey_Transactions" Type="Self.Patient_Journey_Transactions" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Transactions_AssociatedCosts" Type="Self.Patient_Journey_Transactions_AssociatedCosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Transactions_AssociatedCosts">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__6F1576F7">
+    <End Role="Patient_Journey_Transactions" Type="Self.Patient_Journey_Transactions" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Transactions_DesiredOutcomes" Type="Self.Patient_Journey_Transactions_DesiredOutcomes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Transactions_DesiredOutcomes">
+        <PropertyRef Name="Patient_Journey_Transactions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__70099B30">
+    <End Role="Patient_Journey" Type="Self.Patient_Journey" Multiplicity="0..1" />
+    <End Role="Patient_Journey_VersionDetails" Type="Self.Patient_Journey_VersionDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_VersionDetails">
+        <PropertyRef Name="Patient_Journey_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__71BCD978">
+    <End Role="Patient_Journey_Stages_Temp" Type="Self.Patient_Journey_Stages_Temp" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment_Temp" Type="Self.Patient_Journey_Strategic_Moment_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Stages_Temp">
+        <PropertyRef Name="Patient_Journey_Stages_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment_Temp">
+        <PropertyRef Name="Patient_Journey_Start_Stage_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__72B0FDB1">
+    <End Role="Patient_Journey_Stages_Temp" Type="Self.Patient_Journey_Stages_Temp" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment_Temp" Type="Self.Patient_Journey_Strategic_Moment_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Stages_Temp">
+        <PropertyRef Name="Patient_Journey_Stages_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment_Temp">
+        <PropertyRef Name="Patient_Journey_End_Stage_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__73A521EA">
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment_Temp" Type="Self.Patient_Journey_Strategic_Moment_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment_Temp">
+        <PropertyRef Name="Patient_Journey_Start_Transaction_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__74994623">
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment_Temp" Type="Self.Patient_Journey_Strategic_Moment_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Patient_Journey_Transactions_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment_Temp">
+        <PropertyRef Name="Patient_Journey_End_Transaction_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__758D6A5C">
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment_Temp" Type="Self.Patient_Journey_Strategic_Moment_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment_Temp">
+        <PropertyRef Name="Patient_Journey_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Patie__76818E95">
+    <End Role="Patient_Journey_Strategic_Moment_Temp" Type="Self.Patient_Journey_Strategic_Moment_Temp" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Strategic_Moment" Type="Self.Patient_Journey_Strategic_Moment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Journey_Strategic_Moment_Temp">
+        <PropertyRef Name="Patient_Journey_Strategic_Moment_Temp_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Strategic_Moment">
+        <PropertyRef Name="Patient_Journey_Strategic_Moment_Temp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Stage__4301EA8F">
+    <End Role="Stage_Master" Type="Self.Stage_Master" Multiplicity="1" />
+    <End Role="Patient_Journey_Stages_Temp" Type="Self.Patient_Journey_Stages_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stage_Master">
+        <PropertyRef Name="Stage_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Stages_Temp">
+        <PropertyRef Name="Stage_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Stage__6B44E613">
+    <End Role="Stage_Master" Type="Self.Stage_Master" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Stages" Type="Self.Patient_Journey_Stages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stage_Master">
+        <PropertyRef Name="Stage_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Stages">
+        <PropertyRef Name="Stage_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Statu__3F3159AB">
+    <End Role="Status_Master" Type="Self.Status_Master" Multiplicity="1" />
+    <End Role="Patient_Journey_Temp" Type="Self.Patient_Journey_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_Master">
+        <PropertyRef Name="Status_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Temp">
+        <PropertyRef Name="Status_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Statu__695C9DA1">
+    <End Role="Status_Master" Type="Self.Status_Master" Multiplicity="0..1" />
+    <End Role="Patient_Journey" Type="Self.Patient_Journey" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_Master">
+        <PropertyRef Name="Status_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey">
+        <PropertyRef Name="Status_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__SubCl__38845C1C">
+    <End Role="SubClinical_Intervention_Master" Type="Self.SubClinical_Intervention_Master" Multiplicity="1" />
+    <End Role="Patient_Journey_Trans_SubClin_Interventions" Type="Self.Patient_Journey_Trans_SubClin_Interventions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubClinical_Intervention_Master">
+        <PropertyRef Name="SubClinical_Intervention_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Trans_SubClin_Interventions">
+        <PropertyRef Name="SubClinical_Intervention_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__SubCl__505BE5AD">
+    <End Role="SubClinical_Intervention_Master" Type="Self.SubClinical_Intervention_Master" Multiplicity="1" />
+    <End Role="Patient_Journey_Trans_SubClin_Interventions_Temp" Type="Self.Patient_Journey_Trans_SubClin_Interventions_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubClinical_Intervention_Master">
+        <PropertyRef Name="SubClinical_Intervention_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Trans_SubClin_Interventions_Temp">
+        <PropertyRef Name="SubClinical_Intervention_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Trans__47C69FAC">
+    <End Role="Transaction_Master" Type="Self.Transaction_Master" Multiplicity="1" />
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transaction_Master">
+        <PropertyRef Name="Transaction_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Transaction_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Trans__48BAC3E5">
+    <End Role="Transaction_Location_Master" Type="Self.Transaction_Location_Master" Multiplicity="1" />
+    <End Role="Patient_Journey_Transactions_Temp" Type="Self.Patient_Journey_Transactions_Temp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transaction_Location_Master">
+        <PropertyRef Name="Transaction_Location_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Transactions_Temp">
+        <PropertyRef Name="Transaction_Location_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Trans__6C390A4C">
+    <End Role="Transaction_Master" Type="Self.Transaction_Master" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Transactions" Type="Self.Patient_Journey_Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transaction_Master">
+        <PropertyRef Name="Transaction_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Transactions">
+        <PropertyRef Name="Transaction_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient_J__Trans__6D2D2E85">
+    <End Role="Transaction_Location_Master" Type="Self.Transaction_Location_Master" Multiplicity="0..1" />
+    <End Role="Patient_Journey_Transactions" Type="Self.Patient_Journey_Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transaction_Location_Master">
+        <PropertyRef Name="Transaction_Location_Master_Id" />
+      </Principal>
+      <Dependent Role="Patient_Journey_Transactions">
+        <PropertyRef Name="Transaction_Location_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SubClinic__Image__2D12A970">
+    <End Role="Image_Master" Type="Self.Image_Master" Multiplicity="1" />
+    <End Role="SubClinical_Intervention_Master" Type="Self.SubClinical_Intervention_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image_Master">
+        <PropertyRef Name="Image_Master_Id" />
+      </Principal>
+      <Dependent Role="SubClinical_Intervention_Master">
+        <PropertyRef Name="Image_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SubTherap__Thera__70FDBF69">
+    <End Role="Therapeutic_Area_Master" Type="Self.Therapeutic_Area_Master" Multiplicity="0..1" />
+    <End Role="SubTherapeutic_Area_Master" Type="Self.SubTherapeutic_Area_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Therapeutic_Area_Master">
+        <PropertyRef Name="Therapeutic_Area_Master_Id" />
+      </Principal>
+      <Dependent Role="SubTherapeutic_Area_Master">
+        <PropertyRef Name="Therapeutic_Area_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacti__Image__71F1E3A2">
+    <End Role="Image_Master" Type="Self.Image_Master" Multiplicity="0..1" />
+    <End Role="Transaction_Location_Master" Type="Self.Transaction_Location_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image_Master">
+        <PropertyRef Name="Image_Master_Id" />
+      </Principal>
+      <Dependent Role="Transaction_Location_Master">
+        <PropertyRef Name="Image_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacti__Image__72E607DB">
+    <End Role="Image_Master" Type="Self.Image_Master" Multiplicity="0..1" />
+    <End Role="Transaction_Master" Type="Self.Transaction_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image_Master">
+        <PropertyRef Name="Image_Master_Id" />
+      </Principal>
+      <Dependent Role="Transaction_Master">
+        <PropertyRef Name="Image_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacti__Indic__39788055">
+    <End Role="Indication_Master" Type="Self.Indication_Master" Multiplicity="0..1" />
+    <End Role="Transaction_Master" Type="Self.Transaction_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Indication_Master">
+        <PropertyRef Name="Indication_Master_Id" />
+      </Principal>
+      <Dependent Role="Transaction_Master">
+        <PropertyRef Name="Indication_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Coun__Count__73DA2C14">
+    <End Role="Country_Master" Type="Self.Country_Master" Multiplicity="0..1" />
+    <End Role="User_Country_Association" Type="Self.User_Country_Association" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_Master">
+        <PropertyRef Name="Country_Master_Id" />
+      </Principal>
+      <Dependent Role="User_Country_Association">
+        <PropertyRef Name="Country_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Coun__User___74CE504D">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="User_Country_Association" Type="Self.User_Country_Association" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="User_Country_Association">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Role__Role___75C27486">
+    <End Role="Role_Master" Type="Self.Role_Master" Multiplicity="1" />
+    <End Role="User_Roles" Type="Self.User_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role_Master">
+        <PropertyRef Name="Role_Master_Id" />
+      </Principal>
+      <Dependent Role="User_Roles">
+        <PropertyRef Name="Role_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Role__User___76B698BF">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="User_Roles" Type="Self.User_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="User_Roles">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Brand">
+    <End Role="Brand_Master" Type="Self.Brand_Master" Multiplicity="1" />
+    <End Role="Journey_Pdf" Type="Self.Journey_Pdf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand_Master">
+        <PropertyRef Name="Brand_Master_Id" />
+      </Principal>
+      <Dependent Role="Journey_Pdf">
+        <PropertyRef Name="Brand_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Country">
+    <End Role="Country_Master" Type="Self.Country_Master" Multiplicity="1" />
+    <End Role="Journey_Pdf" Type="Self.Journey_Pdf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_Master">
+        <PropertyRef Name="Country_Master_Id" />
+      </Principal>
+      <Dependent Role="Journey_Pdf">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Year">
+    <End Role="Year_Master" Type="Self.Year_Master" Multiplicity="1" />
+    <End Role="Journey_Pdf" Type="Self.Journey_Pdf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Year_Master">
+        <PropertyRef Name="Year_Master_Id" />
+      </Principal>
+      <Dependent Role="Journey_Pdf">
+        <PropertyRef Name="Year" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PatientSpectrumModelStoreContainer">
+    <EntitySet Name="Archetype_Master" EntityType="Self.Archetype_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Area_Master" EntityType="Self.Area_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Brand_Master" EntityType="Self.Brand_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clinical_Intervention_Master" EntityType="Self.Clinical_Intervention_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country_Master" EntityType="Self.Country_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Favourite_Search" EntityType="Self.Favourite_Search" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Favourite_Search_Archetype" EntityType="Self.Favourite_Search_Archetype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Favourite_Search_Area" EntityType="Self.Favourite_Search_Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Favourite_Search_Brand" EntityType="Self.Favourite_Search_Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Favourite_Search_Country" EntityType="Self.Favourite_Search_Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image_Master" EntityType="Self.Image_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Indication_Master" EntityType="Self.Indication_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Journey_Pdf" EntityType="Self.Journey_Pdf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Journey_Pdf_TempData" EntityType="Self.Journey_Pdf_TempData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey" EntityType="Self.Patient_Journey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_HCP_Insights" EntityType="Self.Patient_Journey_HCP_Insights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_HCP_Insights_Temp" EntityType="Self.Patient_Journey_HCP_Insights_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Patient_Insights" EntityType="Self.Patient_Journey_Patient_Insights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Patient_Insights_Temp" EntityType="Self.Patient_Journey_Patient_Insights_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Payor_Insights" EntityType="Self.Patient_Journey_Payor_Insights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Payor_Insights_Temp" EntityType="Self.Patient_Journey_Payor_Insights_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Stages" EntityType="Self.Patient_Journey_Stages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Stages_Temp" EntityType="Self.Patient_Journey_Stages_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Strategic_Moment" EntityType="Self.Patient_Journey_Strategic_Moment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Strategic_Moment_Temp" EntityType="Self.Patient_Journey_Strategic_Moment_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Temp" EntityType="Self.Patient_Journey_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Trans_Clin_Interventions" EntityType="Self.Patient_Journey_Trans_Clin_Interventions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Trans_Clin_Interventions_Temp" EntityType="Self.Patient_Journey_Trans_Clin_Interventions_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Trans_SubClin_Interventions" EntityType="Self.Patient_Journey_Trans_SubClin_Interventions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Trans_SubClin_Interventions_Temp" EntityType="Self.Patient_Journey_Trans_SubClin_Interventions_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Transactions" EntityType="Self.Patient_Journey_Transactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Transactions_AssociatedCosts" EntityType="Self.Patient_Journey_Transactions_AssociatedCosts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Transactions_AssociatedCosts_Temp" EntityType="Self.Patient_Journey_Transactions_AssociatedCosts_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Transactions_DesiredOutcomes" EntityType="Self.Patient_Journey_Transactions_DesiredOutcomes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Transactions_DesiredOutcomes_Temp" EntityType="Self.Patient_Journey_Transactions_DesiredOutcomes_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_Transactions_Temp" EntityType="Self.Patient_Journey_Transactions_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_VersionDetails" EntityType="Self.Patient_Journey_VersionDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Journey_VersionDetails_Temp" EntityType="Self.Patient_Journey_VersionDetails_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role_Master" EntityType="Self.Role_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stage_Master" EntityType="Self.Stage_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status_Master" EntityType="Self.Status_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubClinical_Intervention_Master" EntityType="Self.SubClinical_Intervention_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubTherapeutic_Area_Master" EntityType="Self.SubTherapeutic_Area_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Therapeutic_Area_Master" EntityType="Self.Therapeutic_Area_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transaction_Location_Master" EntityType="Self.Transaction_Location_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transaction_Master" EntityType="Self.Transaction_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Country_Association" EntityType="Self.User_Country_Association" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Logon_Audit" EntityType="Self.User_Logon_Audit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Logon_Audit_MS" EntityType="Self.User_Logon_Audit_MS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Roles" EntityType="Self.User_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Year_Master" EntityType="Self.Year_Master" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Area_Mast__Arche__7D63964E" Association="Self.FK__Area_Mast__Arche__7D63964E">
+      <End Role="Archetype_Master" EntitySet="Archetype_Master" />
+      <End Role="Area_Master" EntitySet="Area_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Brand_Mas__Indic__536D5C82" Association="Self.FK__Brand_Mas__Indic__536D5C82">
+      <End Role="Indication_Master" EntitySet="Indication_Master" />
+      <End Role="Brand_Master" EntitySet="Brand_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Brand_Mas__SubTh__546180BB" Association="Self.FK__Brand_Mas__SubTh__546180BB">
+      <End Role="SubTherapeutic_Area_Master" EntitySet="SubTherapeutic_Area_Master" />
+      <End Role="Brand_Master" EntitySet="Brand_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Brand_Mas__Thera__5555A4F4" Association="Self.FK__Brand_Mas__Thera__5555A4F4">
+      <End Role="Therapeutic_Area_Master" EntitySet="Therapeutic_Area_Master" />
+      <End Role="Brand_Master" EntitySet="Brand_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Clinical___Image__5649C92D" Association="Self.FK__Clinical___Image__5649C92D">
+      <End Role="Image_Master" EntitySet="Image_Master" />
+      <End Role="Clinical_Intervention_Master" EntitySet="Clinical_Intervention_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Country_M__Arche__7E57BA87" Association="Self.FK__Country_M__Arche__7E57BA87">
+      <End Role="Archetype_Master" EntitySet="Archetype_Master" />
+      <End Role="Country_Master" EntitySet="Country_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Country_M__Area___573DED66" Association="Self.FK__Country_M__Area___573DED66">
+      <End Role="Area_Master" EntitySet="Area_Master" />
+      <End Role="Country_Master" EntitySet="Country_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Country_M__Area___5832119F" Association="Self.FK__Country_M__Area___5832119F">
+      <End Role="Area_Master" EntitySet="Area_Master" />
+      <End Role="Country_Master" EntitySet="Country_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__Arche__0504B816" Association="Self.FK__Favourite__Arche__0504B816">
+      <End Role="Archetype_Master" EntitySet="Archetype_Master" />
+      <End Role="Favourite_Search_Archetype" EntitySet="Favourite_Search_Archetype" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__Area___5CF6C6BC" Association="Self.FK__Favourite__Area___5CF6C6BC">
+      <End Role="Area_Master" EntitySet="Area_Master" />
+      <End Role="Favourite_Search_Area" EntitySet="Favourite_Search_Area" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__Brand__5FD33367" Association="Self.FK__Favourite__Brand__5FD33367">
+      <End Role="Brand_Master" EntitySet="Brand_Master" />
+      <End Role="Favourite_Search_Brand" EntitySet="Favourite_Search_Brand" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__Count__62AFA012" Association="Self.FK__Favourite__Count__62AFA012">
+      <End Role="Country_Master" EntitySet="Country_Master" />
+      <End Role="Favourite_Search_Country" EntitySet="Favourite_Search_Country" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__Favou__05F8DC4F" Association="Self.FK__Favourite__Favou__05F8DC4F">
+      <End Role="Favourite_Search" EntitySet="Favourite_Search" />
+      <End Role="Favourite_Search_Archetype" EntitySet="Favourite_Search_Archetype" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__Favou__5DEAEAF5" Association="Self.FK__Favourite__Favou__5DEAEAF5">
+      <End Role="Favourite_Search" EntitySet="Favourite_Search" />
+      <End Role="Favourite_Search_Area" EntitySet="Favourite_Search_Area" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__Favou__60C757A0" Association="Self.FK__Favourite__Favou__60C757A0">
+      <End Role="Favourite_Search" EntitySet="Favourite_Search" />
+      <End Role="Favourite_Search_Brand" EntitySet="Favourite_Search_Brand" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__Favou__63A3C44B" Association="Self.FK__Favourite__Favou__63A3C44B">
+      <End Role="Favourite_Search" EntitySet="Favourite_Search" />
+      <End Role="Favourite_Search_Country" EntitySet="Favourite_Search_Country" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__Indic__592635D8" Association="Self.FK__Favourite__Indic__592635D8">
+      <End Role="Indication_Master" EntitySet="Indication_Master" />
+      <End Role="Favourite_Search" EntitySet="Favourite_Search" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__SubTh__5A1A5A11" Association="Self.FK__Favourite__SubTh__5A1A5A11">
+      <End Role="SubTherapeutic_Area_Master" EntitySet="SubTherapeutic_Area_Master" />
+      <End Role="Favourite_Search" EntitySet="Favourite_Search" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__Thera__5B0E7E4A" Association="Self.FK__Favourite__Thera__5B0E7E4A">
+      <End Role="Therapeutic_Area_Master" EntitySet="Therapeutic_Area_Master" />
+      <End Role="Favourite_Search" EntitySet="Favourite_Search" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__User___06ED0088" Association="Self.FK__Favourite__User___06ED0088">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Favourite_Search_Archetype" EntitySet="Favourite_Search_Archetype" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__User___5C02A283" Association="Self.FK__Favourite__User___5C02A283">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Favourite_Search" EntitySet="Favourite_Search" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__User___5EDF0F2E" Association="Self.FK__Favourite__User___5EDF0F2E">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Favourite_Search_Area" EntitySet="Favourite_Search_Area" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__User___61BB7BD9" Association="Self.FK__Favourite__User___61BB7BD9">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Favourite_Search_Brand" EntitySet="Favourite_Search_Brand" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favourite__User___6497E884" Association="Self.FK__Favourite__User___6497E884">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Favourite_Search_Country" EntitySet="Favourite_Search_Country" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Indicatio__SubTh__658C0CBD" Association="Self.FK__Indicatio__SubTh__658C0CBD">
+      <End Role="SubTherapeutic_Area_Master" EntitySet="SubTherapeutic_Area_Master" />
+      <End Role="Indication_Master" EntitySet="Indication_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Indicatio__Thera__668030F6" Association="Self.FK__Indicatio__Thera__668030F6">
+      <End Role="Therapeutic_Area_Master" EntitySet="Therapeutic_Area_Master" />
+      <End Role="Indication_Master" EntitySet="Indication_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Brand__3D491139" Association="Self.FK__Patient_J__Brand__3D491139">
+      <End Role="Brand_Master" EntitySet="Brand_Master" />
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Brand__6774552F" Association="Self.FK__Patient_J__Brand__6774552F">
+      <End Role="Brand_Master" EntitySet="Brand_Master" />
+      <End Role="Patient_Journey" EntitySet="Patient_Journey" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Clini__247D636F" Association="Self.FK__Patient_J__Clini__247D636F">
+      <End Role="Clinical_Intervention_Master" EntitySet="Clinical_Intervention_Master" />
+      <End Role="Patient_Journey_Trans_Clin_Interventions" EntitySet="Patient_Journey_Trans_Clin_Interventions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Clini__4B973090" Association="Self.FK__Patient_J__Clini__4B973090">
+      <End Role="Clinical_Intervention_Master" EntitySet="Clinical_Intervention_Master" />
+      <End Role="Patient_Journey_Trans_Clin_Interventions_Temp" EntitySet="Patient_Journey_Trans_Clin_Interventions_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Count__3E3D3572" Association="Self.FK__Patient_J__Count__3E3D3572">
+      <End Role="Country_Master" EntitySet="Country_Master" />
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Count__68687968" Association="Self.FK__Patient_J__Count__68687968">
+      <End Role="Country_Master" EntitySet="Country_Master" />
+      <End Role="Patient_Journey" EntitySet="Patient_Journey" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__04CFADEC" Association="Self.FK__Patient_J__Patie__04CFADEC">
+      <End Role="Patient_Journey" EntitySet="Patient_Journey" />
+      <End Role="Patient_Journey_Patient_Insights" EntitySet="Patient_Journey_Patient_Insights" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__05C3D225" Association="Self.FK__Patient_J__Patie__05C3D225">
+      <End Role="Patient_Journey_Transactions" EntitySet="Patient_Journey_Transactions" />
+      <End Role="Patient_Journey_Patient_Insights" EntitySet="Patient_Journey_Patient_Insights" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__08A03ED0" Association="Self.FK__Patient_J__Patie__08A03ED0">
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+      <End Role="Patient_Journey_Patient_Insights_Temp" EntitySet="Patient_Journey_Patient_Insights_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__09946309" Association="Self.FK__Patient_J__Patie__09946309">
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+      <End Role="Patient_Journey_Patient_Insights_Temp" EntitySet="Patient_Journey_Patient_Insights_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__0BB1B5A5" Association="Self.FK__Patient_J__Patie__0BB1B5A5">
+      <End Role="Patient_Journey_Stages" EntitySet="Patient_Journey_Stages" />
+      <End Role="Patient_Journey_Strategic_Moment" EntitySet="Patient_Journey_Strategic_Moment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__0C70CFB4" Association="Self.FK__Patient_J__Patie__0C70CFB4">
+      <End Role="Patient_Journey" EntitySet="Patient_Journey" />
+      <End Role="Patient_Journey_HCP_Insights" EntitySet="Patient_Journey_HCP_Insights" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__0CA5D9DE" Association="Self.FK__Patient_J__Patie__0CA5D9DE">
+      <End Role="Patient_Journey_Stages" EntitySet="Patient_Journey_Stages" />
+      <End Role="Patient_Journey_Strategic_Moment" EntitySet="Patient_Journey_Strategic_Moment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__0D64F3ED" Association="Self.FK__Patient_J__Patie__0D64F3ED">
+      <End Role="Patient_Journey_Transactions" EntitySet="Patient_Journey_Transactions" />
+      <End Role="Patient_Journey_HCP_Insights" EntitySet="Patient_Journey_HCP_Insights" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__0D99FE17" Association="Self.FK__Patient_J__Patie__0D99FE17">
+      <End Role="Patient_Journey_Transactions" EntitySet="Patient_Journey_Transactions" />
+      <End Role="Patient_Journey_Strategic_Moment" EntitySet="Patient_Journey_Strategic_Moment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__0E8E2250" Association="Self.FK__Patient_J__Patie__0E8E2250">
+      <End Role="Patient_Journey_Transactions" EntitySet="Patient_Journey_Transactions" />
+      <End Role="Patient_Journey_Strategic_Moment" EntitySet="Patient_Journey_Strategic_Moment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__10416098" Association="Self.FK__Patient_J__Patie__10416098">
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+      <End Role="Patient_Journey_HCP_Insights_Temp" EntitySet="Patient_Journey_HCP_Insights_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__113584D1" Association="Self.FK__Patient_J__Patie__113584D1">
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+      <End Role="Patient_Journey_HCP_Insights_Temp" EntitySet="Patient_Journey_HCP_Insights_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__16EE5E27" Association="Self.FK__Patient_J__Patie__16EE5E27">
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+      <End Role="Patient_Journey_Payor_Insights_Temp" EntitySet="Patient_Journey_Payor_Insights_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__17E28260" Association="Self.FK__Patient_J__Patie__17E28260">
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+      <End Role="Patient_Journey_Payor_Insights_Temp" EntitySet="Patient_Journey_Payor_Insights_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__1ABEEF0B" Association="Self.FK__Patient_J__Patie__1ABEEF0B">
+      <End Role="Patient_Journey" EntitySet="Patient_Journey" />
+      <End Role="Patient_Journey_Payor_Insights" EntitySet="Patient_Journey_Payor_Insights" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__1BB31344" Association="Self.FK__Patient_J__Patie__1BB31344">
+      <End Role="Patient_Journey_Transactions" EntitySet="Patient_Journey_Transactions" />
+      <End Role="Patient_Journey_Payor_Insights" EntitySet="Patient_Journey_Payor_Insights" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__257187A8" Association="Self.FK__Patient_J__Patie__257187A8">
+      <End Role="Patient_Journey" EntitySet="Patient_Journey" />
+      <End Role="Patient_Journey_Strategic_Moment" EntitySet="Patient_Journey_Strategic_Moment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__379037E3" Association="Self.FK__Patient_J__Patie__379037E3">
+      <End Role="Patient_Journey_Trans_Clin_Interventions" EntitySet="Patient_Journey_Trans_Clin_Interventions" />
+      <End Role="Patient_Journey_Trans_SubClin_Interventions" EntitySet="Patient_Journey_Trans_SubClin_Interventions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__3C54ED00" Association="Self.FK__Patient_J__Patie__3C54ED00">
+      <End Role="Patient_Journey" EntitySet="Patient_Journey" />
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__420DC656" Association="Self.FK__Patient_J__Patie__420DC656">
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+      <End Role="Patient_Journey_Stages_Temp" EntitySet="Patient_Journey_Stages_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__45DE573A" Association="Self.FK__Patient_J__Patie__45DE573A">
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__46D27B73" Association="Self.FK__Patient_J__Patie__46D27B73">
+      <End Role="Patient_Journey_Stages_Temp" EntitySet="Patient_Journey_Stages_Temp" />
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__4C8B54C9" Association="Self.FK__Patient_J__Patie__4C8B54C9">
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+      <End Role="Patient_Journey_Trans_Clin_Interventions_Temp" EntitySet="Patient_Journey_Trans_Clin_Interventions_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__4F67C174" Association="Self.FK__Patient_J__Patie__4F67C174">
+      <End Role="Patient_Journey_Trans_Clin_Interventions_Temp" EntitySet="Patient_Journey_Trans_Clin_Interventions_Temp" />
+      <End Role="Patient_Journey_Trans_SubClin_Interventions_Temp" EntitySet="Patient_Journey_Trans_SubClin_Interventions_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__53385258" Association="Self.FK__Patient_J__Patie__53385258">
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+      <End Role="Patient_Journey_Transactions_AssociatedCosts_Temp" EntitySet="Patient_Journey_Transactions_AssociatedCosts_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__5614BF03" Association="Self.FK__Patient_J__Patie__5614BF03">
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+      <End Role="Patient_Journey_Transactions_DesiredOutcomes_Temp" EntitySet="Patient_Journey_Transactions_DesiredOutcomes_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__58F12BAE" Association="Self.FK__Patient_J__Patie__58F12BAE">
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+      <End Role="Patient_Journey_VersionDetails_Temp" EntitySet="Patient_Journey_VersionDetails_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__6A50C1DA" Association="Self.FK__Patient_J__Patie__6A50C1DA">
+      <End Role="Patient_Journey" EntitySet="Patient_Journey" />
+      <End Role="Patient_Journey_Stages" EntitySet="Patient_Journey_Stages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__6E2152BE" Association="Self.FK__Patient_J__Patie__6E2152BE">
+      <End Role="Patient_Journey_Transactions" EntitySet="Patient_Journey_Transactions" />
+      <End Role="Patient_Journey_Transactions_AssociatedCosts" EntitySet="Patient_Journey_Transactions_AssociatedCosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__6F1576F7" Association="Self.FK__Patient_J__Patie__6F1576F7">
+      <End Role="Patient_Journey_Transactions" EntitySet="Patient_Journey_Transactions" />
+      <End Role="Patient_Journey_Transactions_DesiredOutcomes" EntitySet="Patient_Journey_Transactions_DesiredOutcomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__70099B30" Association="Self.FK__Patient_J__Patie__70099B30">
+      <End Role="Patient_Journey" EntitySet="Patient_Journey" />
+      <End Role="Patient_Journey_VersionDetails" EntitySet="Patient_Journey_VersionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__71BCD978" Association="Self.FK__Patient_J__Patie__71BCD978">
+      <End Role="Patient_Journey_Stages_Temp" EntitySet="Patient_Journey_Stages_Temp" />
+      <End Role="Patient_Journey_Strategic_Moment_Temp" EntitySet="Patient_Journey_Strategic_Moment_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__72B0FDB1" Association="Self.FK__Patient_J__Patie__72B0FDB1">
+      <End Role="Patient_Journey_Stages_Temp" EntitySet="Patient_Journey_Stages_Temp" />
+      <End Role="Patient_Journey_Strategic_Moment_Temp" EntitySet="Patient_Journey_Strategic_Moment_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__73A521EA" Association="Self.FK__Patient_J__Patie__73A521EA">
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+      <End Role="Patient_Journey_Strategic_Moment_Temp" EntitySet="Patient_Journey_Strategic_Moment_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__74994623" Association="Self.FK__Patient_J__Patie__74994623">
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+      <End Role="Patient_Journey_Strategic_Moment_Temp" EntitySet="Patient_Journey_Strategic_Moment_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__758D6A5C" Association="Self.FK__Patient_J__Patie__758D6A5C">
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+      <End Role="Patient_Journey_Strategic_Moment_Temp" EntitySet="Patient_Journey_Strategic_Moment_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Patie__76818E95" Association="Self.FK__Patient_J__Patie__76818E95">
+      <End Role="Patient_Journey_Strategic_Moment_Temp" EntitySet="Patient_Journey_Strategic_Moment_Temp" />
+      <End Role="Patient_Journey_Strategic_Moment" EntitySet="Patient_Journey_Strategic_Moment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Stage__4301EA8F" Association="Self.FK__Patient_J__Stage__4301EA8F">
+      <End Role="Stage_Master" EntitySet="Stage_Master" />
+      <End Role="Patient_Journey_Stages_Temp" EntitySet="Patient_Journey_Stages_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Stage__6B44E613" Association="Self.FK__Patient_J__Stage__6B44E613">
+      <End Role="Stage_Master" EntitySet="Stage_Master" />
+      <End Role="Patient_Journey_Stages" EntitySet="Patient_Journey_Stages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Statu__3F3159AB" Association="Self.FK__Patient_J__Statu__3F3159AB">
+      <End Role="Status_Master" EntitySet="Status_Master" />
+      <End Role="Patient_Journey_Temp" EntitySet="Patient_Journey_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Statu__695C9DA1" Association="Self.FK__Patient_J__Statu__695C9DA1">
+      <End Role="Status_Master" EntitySet="Status_Master" />
+      <End Role="Patient_Journey" EntitySet="Patient_Journey" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__SubCl__38845C1C" Association="Self.FK__Patient_J__SubCl__38845C1C">
+      <End Role="SubClinical_Intervention_Master" EntitySet="SubClinical_Intervention_Master" />
+      <End Role="Patient_Journey_Trans_SubClin_Interventions" EntitySet="Patient_Journey_Trans_SubClin_Interventions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__SubCl__505BE5AD" Association="Self.FK__Patient_J__SubCl__505BE5AD">
+      <End Role="SubClinical_Intervention_Master" EntitySet="SubClinical_Intervention_Master" />
+      <End Role="Patient_Journey_Trans_SubClin_Interventions_Temp" EntitySet="Patient_Journey_Trans_SubClin_Interventions_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Trans__47C69FAC" Association="Self.FK__Patient_J__Trans__47C69FAC">
+      <End Role="Transaction_Master" EntitySet="Transaction_Master" />
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Trans__48BAC3E5" Association="Self.FK__Patient_J__Trans__48BAC3E5">
+      <End Role="Transaction_Location_Master" EntitySet="Transaction_Location_Master" />
+      <End Role="Patient_Journey_Transactions_Temp" EntitySet="Patient_Journey_Transactions_Temp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Trans__6C390A4C" Association="Self.FK__Patient_J__Trans__6C390A4C">
+      <End Role="Transaction_Master" EntitySet="Transaction_Master" />
+      <End Role="Patient_Journey_Transactions" EntitySet="Patient_Journey_Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient_J__Trans__6D2D2E85" Association="Self.FK__Patient_J__Trans__6D2D2E85">
+      <End Role="Transaction_Location_Master" EntitySet="Transaction_Location_Master" />
+      <End Role="Patient_Journey_Transactions" EntitySet="Patient_Journey_Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SubClinic__Image__2D12A970" Association="Self.FK__SubClinic__Image__2D12A970">
+      <End Role="Image_Master" EntitySet="Image_Master" />
+      <End Role="SubClinical_Intervention_Master" EntitySet="SubClinical_Intervention_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SubTherap__Thera__70FDBF69" Association="Self.FK__SubTherap__Thera__70FDBF69">
+      <End Role="Therapeutic_Area_Master" EntitySet="Therapeutic_Area_Master" />
+      <End Role="SubTherapeutic_Area_Master" EntitySet="SubTherapeutic_Area_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacti__Image__71F1E3A2" Association="Self.FK__Transacti__Image__71F1E3A2">
+      <End Role="Image_Master" EntitySet="Image_Master" />
+      <End Role="Transaction_Location_Master" EntitySet="Transaction_Location_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacti__Image__72E607DB" Association="Self.FK__Transacti__Image__72E607DB">
+      <End Role="Image_Master" EntitySet="Image_Master" />
+      <End Role="Transaction_Master" EntitySet="Transaction_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacti__Indic__39788055" Association="Self.FK__Transacti__Indic__39788055">
+      <End Role="Indication_Master" EntitySet="Indication_Master" />
+      <End Role="Transaction_Master" EntitySet="Transaction_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Coun__Count__73DA2C14" Association="Self.FK__User_Coun__Count__73DA2C14">
+      <End Role="Country_Master" EntitySet="Country_Master" />
+      <End Role="User_Country_Association" EntitySet="User_Country_Association" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Coun__User___74CE504D" Association="Self.FK__User_Coun__User___74CE504D">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="User_Country_Association" EntitySet="User_Country_Association" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Role__Role___75C27486" Association="Self.FK__User_Role__Role___75C27486">
+      <End Role="Role_Master" EntitySet="Role_Master" />
+      <End Role="User_Roles" EntitySet="User_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Role__User___76B698BF" Association="Self.FK__User_Role__User___76B698BF">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="User_Roles" EntitySet="User_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Brand" Association="Self.fk_Brand">
+      <End Role="Brand_Master" EntitySet="Brand_Master" />
+      <End Role="Journey_Pdf" EntitySet="Journey_Pdf" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Country" Association="Self.fk_Country">
+      <End Role="Country_Master" EntitySet="Country_Master" />
+      <End Role="Journey_Pdf" EntitySet="Journey_Pdf" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Year" Association="Self.fk_Year">
+      <End Role="Year_Master" EntitySet="Year_Master" />
+      <End Role="Journey_Pdf" EntitySet="Journey_Pdf" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

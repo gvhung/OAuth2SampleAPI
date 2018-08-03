@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Patient Spectrum\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/IdentityModel.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/IdentityServer3.AccessTokenValidation.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Protocol.Extensions.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Cors.dll">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Jwt.dll">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/14/2017 11:35:20</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>09/14/2017 11:35:20</publishTime>
+    </File>
+    <File Include="bin/PatientJourney.Business.dll">
+      <publishTime>10/13/2017 17:34:52</publishTime>
+    </File>
+    <File Include="bin/PatientJourney.BusinessModel.dll">
+      <publishTime>10/13/2017 16:47:13</publishTime>
+    </File>
+    <File Include="bin/PatientJourney.DataAccess.dll">
+      <publishTime>10/13/2017 16:47:13</publishTime>
+    </File>
+    <File Include="bin/PatientJourney.GlobalConstants.dll">
+      <publishTime>10/13/2017 17:34:52</publishTime>
+    </File>
+    <File Include="bin/PatientSpectrum.WebAPI.dll">
+      <publishTime>10/13/2017 17:35:06</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>09/14/2017 11:35:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>09/13/2017 17:56:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>09/14/2017 11:35:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>09/14/2017 11:35:19</publishTime>
+    </File>
+    <File Include="bin/Serilog.dll">
+      <publishTime>10/05/2016 01:38:08</publishTime>
+    </File>
+    <File Include="bin/Serilog.Settings.AppSettings.dll">
+      <publishTime>09/19/2017 08:34:06</publishTime>
+    </File>
+    <File Include="bin/Serilog.Sinks.File.dll">
+      <publishTime>01/03/2017 02:29:38</publishTime>
+    </File>
+    <File Include="bin/Serilog.Sinks.RollingFile.dll">
+      <publishTime>01/03/2017 03:05:26</publishTime>
+    </File>
+    <File Include="bin/Serilog.Sinks.Trace.dll">
+      <publishTime>10/30/2016 23:02:28</publishTime>
+    </File>
+    <File Include="bin/System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>09/14/2017 11:35:20</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>09/14/2017 11:35:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Owin.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>09/14/2017 11:35:03</publishTime>
+    </File>
+    <File Include="bin/Thinktecture.IdentityModel.dll">
+      <publishTime>09/14/2017 11:35:20</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>09/14/2017 11:35:21</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/27/2017 15:55:21</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/13/2017 17:41:25</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

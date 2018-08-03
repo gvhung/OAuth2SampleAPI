@@ -1,0 +1,12 @@
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\bin\Release\PatientJourney.DataAccess.dll.config
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\bin\Release\PatientJourney.DataAccess.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\bin\Release\PatientJourney.DataAccess.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\bin\Release\EntityFramework.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\bin\Release\Newtonsoft.Json.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\bin\Release\PatientJourney.BusinessModel.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\bin\Release\PatientJourney.BusinessModel.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\bin\Release\EntityFramework.xml
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\bin\Release\Newtonsoft.Json.xml
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\obj\Release\PatientJourney.DataAccess.csprojResolveAssemblyReference.cache
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\obj\Release\PatientJourney.DataAccess.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.DataAccess\obj\Release\PatientJourney.DataAccess.pdb

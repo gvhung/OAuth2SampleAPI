@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PatientSpectrumModelStoreContainer" CdmEntityContainer="PJEntities">
+    <EntitySetMapping Name="Archetype_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Archetype_Master">
+        <MappingFragment StoreEntitySet="Archetype_Master">
+          <ScalarProperty Name="Archetype_Master_Id" ColumnName="Archetype_Master_Id" />
+          <ScalarProperty Name="Archetype_Name" ColumnName="Archetype_Name" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Area_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Area_Master">
+        <MappingFragment StoreEntitySet="Area_Master">
+          <ScalarProperty Name="Area_Master_Id" ColumnName="Area_Master_Id" />
+          <ScalarProperty Name="Area_Name" ColumnName="Area_Name" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Archetype_Master_Id" ColumnName="Archetype_Master_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brand_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Brand_Master">
+        <MappingFragment StoreEntitySet="Brand_Master">
+          <ScalarProperty Name="Brand_Master_Id" ColumnName="Brand_Master_Id" />
+          <ScalarProperty Name="Brand_Name" ColumnName="Brand_Name" />
+          <ScalarProperty Name="Therapeutic_Area_Master_Id" ColumnName="Therapeutic_Area_Master_Id" />
+          <ScalarProperty Name="SubTherapeutic_Area_Master_Id" ColumnName="SubTherapeutic_Area_Master_Id" />
+          <ScalarProperty Name="Indication_Master_Id" ColumnName="Indication_Master_Id" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clinical_Intervention_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Clinical_Intervention_Master">
+        <MappingFragment StoreEntitySet="Clinical_Intervention_Master">
+          <ScalarProperty Name="Clinical_Intervention_Master_Id" ColumnName="Clinical_Intervention_Master_Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image_Master_Id" ColumnName="Image_Master_Id" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Country_Master">
+        <MappingFragment StoreEntitySet="Country_Master">
+          <ScalarProperty Name="Country_Master_Id" ColumnName="Country_Master_Id" />
+          <ScalarProperty Name="Country_Name" ColumnName="Country_Name" />
+          <ScalarProperty Name="Area_Master_Id" ColumnName="Area_Master_Id" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Archetype_Master_Id" ColumnName="Archetype_Master_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favourite_Search">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Favourite_Search">
+        <MappingFragment StoreEntitySet="Favourite_Search">
+          <ScalarProperty Name="Favourite_Search_Id" ColumnName="Favourite_Search_Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Therapeutic_Area_Master_Id" ColumnName="Therapeutic_Area_Master_Id" />
+          <ScalarProperty Name="SubTherapeutic_Area_Master_Id" ColumnName="SubTherapeutic_Area_Master_Id" />
+          <ScalarProperty Name="Indication_Master_Id" ColumnName="Indication_Master_Id" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favourite_Search_Archetype">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Favourite_Search_Archetype">
+        <MappingFragment StoreEntitySet="Favourite_Search_Archetype">
+          <ScalarProperty Name="Favourite_Search_Archetype_Id" ColumnName="Favourite_Search_Archetype_Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Favourite_Search_Id" ColumnName="Favourite_Search_Id" />
+          <ScalarProperty Name="Archetype_Master_Id" ColumnName="Archetype_Master_Id" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favourite_Search_Area">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Favourite_Search_Area">
+        <MappingFragment StoreEntitySet="Favourite_Search_Area">
+          <ScalarProperty Name="Favourite_Search_Area_Id" ColumnName="Favourite_Search_Area_Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Favourite_Search_Id" ColumnName="Favourite_Search_Id" />
+          <ScalarProperty Name="Area_Master_Id" ColumnName="Area_Master_Id" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favourite_Search_Brand">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Favourite_Search_Brand">
+        <MappingFragment StoreEntitySet="Favourite_Search_Brand">
+          <ScalarProperty Name="Favourite_Search_Brand_Id" ColumnName="Favourite_Search_Brand_Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Favourite_Search_Id" ColumnName="Favourite_Search_Id" />
+          <ScalarProperty Name="Brand_Master_Id" ColumnName="Brand_Master_Id" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favourite_Search_Country">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Favourite_Search_Country">
+        <MappingFragment StoreEntitySet="Favourite_Search_Country">
+          <ScalarProperty Name="Favourite_Search_Country_Id" ColumnName="Favourite_Search_Country_Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Favourite_Search_Id" ColumnName="Favourite_Search_Id" />
+          <ScalarProperty Name="Country_Master_Id" ColumnName="Country_Master_Id" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Image_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Image_Master">
+        <MappingFragment StoreEntitySet="Image_Master">
+          <ScalarProperty Name="Image_Master_Id" ColumnName="Image_Master_Id" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+          <ScalarProperty Name="Image_Description" ColumnName="Image_Description" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Indication_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Indication_Master">
+        <MappingFragment StoreEntitySet="Indication_Master">
+          <ScalarProperty Name="Indication_Master_Id" ColumnName="Indication_Master_Id" />
+          <ScalarProperty Name="Indication_Name" ColumnName="Indication_Name" />
+          <ScalarProperty Name="Therapeutic_Area_Master_Id" ColumnName="Therapeutic_Area_Master_Id" />
+          <ScalarProperty Name="SubTherapeutic_Area_Master_Id" ColumnName="SubTherapeutic_Area_Master_Id" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Role_Master">
+        <MappingFragment StoreEntitySet="Role_Master">
+          <ScalarProperty Name="Role_Master_Id" ColumnName="Role_Master_Id" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Role_Description" ColumnName="Role_Description" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stage_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Stage_Master">
+        <MappingFragment StoreEntitySet="Stage_Master">
+          <ScalarProperty Name="Stage_Master_Id" ColumnName="Stage_Master_Id" />
+          <ScalarProperty Name="Stage_Name" ColumnName="Stage_Name" />
+          <ScalarProperty Name="Stage_Description" ColumnName="Stage_Description" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Status_Master">
+        <MappingFragment StoreEntitySet="Status_Master">
+          <ScalarProperty Name="Status_Master_Id" ColumnName="Status_Master_Id" />
+          <ScalarProperty Name="Status_Name" ColumnName="Status_Name" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubTherapeutic_Area_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.SubTherapeutic_Area_Master">
+        <MappingFragment StoreEntitySet="SubTherapeutic_Area_Master">
+          <ScalarProperty Name="SubTherapeutic_Area_Master_Id" ColumnName="SubTherapeutic_Area_Master_Id" />
+          <ScalarProperty Name="SubTherapeutic_Area_Name" ColumnName="SubTherapeutic_Area_Name" />
+          <ScalarProperty Name="Therapeutic_Area_Master_Id" ColumnName="Therapeutic_Area_Master_Id" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Therapeutic_Area_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Therapeutic_Area_Master">
+        <MappingFragment StoreEntitySet="Therapeutic_Area_Master">
+          <ScalarProperty Name="Therapeutic_Area_Master_Id" ColumnName="Therapeutic_Area_Master_Id" />
+          <ScalarProperty Name="Therapeutic_Area_Name" ColumnName="Therapeutic_Area_Name" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transaction_Location_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Transaction_Location_Master">
+        <MappingFragment StoreEntitySet="Transaction_Location_Master">
+          <ScalarProperty Name="Transaction_Location_Master_Id" ColumnName="Transaction_Location_Master_Id" />
+          <ScalarProperty Name="Location_Name" ColumnName="Location_Name" />
+          <ScalarProperty Name="Location_Description" ColumnName="Location_Description" />
+          <ScalarProperty Name="Image_Master_Id" ColumnName="Image_Master_Id" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transaction_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Transaction_Master">
+        <MappingFragment StoreEntitySet="Transaction_Master">
+          <ScalarProperty Name="Indication_Master_Id" ColumnName="Indication_Master_Id" />
+          <ScalarProperty Name="Transaction_Master_Id" ColumnName="Transaction_Master_Id" />
+          <ScalarProperty Name="Transaction_Name" ColumnName="Transaction_Name" />
+          <ScalarProperty Name="Transaction_Description" ColumnName="Transaction_Description" />
+          <ScalarProperty Name="Image_Master_Id" ColumnName="Image_Master_Id" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Country_Association">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.User_Country_Association">
+        <MappingFragment StoreEntitySet="User_Country_Association">
+          <ScalarProperty Name="User_Country_Association_Id" ColumnName="User_Country_Association_Id" />
+          <ScalarProperty Name="Country_Master_Id" ColumnName="Country_Master_Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Logon_Audit">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.User_Logon_Audit">
+        <MappingFragment StoreEntitySet="User_Logon_Audit">
+          <ScalarProperty Name="User_Logon_Audit_Id" ColumnName="User_Logon_Audit_Id" />
+          <ScalarProperty Name="User_511" ColumnName="User_511" />
+          <ScalarProperty Name="UPI" ColumnName="UPI" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Middle_Initial" ColumnName="Middle_Initial" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+          <ScalarProperty Name="Logon_Client_Date" ColumnName="Logon_Client_Date" />
+          <ScalarProperty Name="Logon_UTC_Date" ColumnName="Logon_UTC_Date" />
+          <ScalarProperty Name="Logon_Client_TimeZone" ColumnName="Logon_Client_TimeZone" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Logon_Audit_MS">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.User_Logon_Audit_MS">
+        <MappingFragment StoreEntitySet="User_Logon_Audit_MS">
+          <ScalarProperty Name="User_Logon_Audit_Id" ColumnName="User_Logon_Audit_Id" />
+          <ScalarProperty Name="User_511" ColumnName="User_511" />
+          <ScalarProperty Name="UPI" ColumnName="UPI" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Middle_Initial" ColumnName="Middle_Initial" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+          <ScalarProperty Name="Logon_Client_Date" ColumnName="Logon_Client_Date" />
+          <ScalarProperty Name="Logon_UTC_Date" ColumnName="Logon_UTC_Date" />
+          <ScalarProperty Name="Logon_Client_TimeZone" ColumnName="Logon_Client_TimeZone" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Roles">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.User_Roles">
+        <MappingFragment StoreEntitySet="User_Roles">
+          <ScalarProperty Name="User_Roles_Id" ColumnName="User_Roles_Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Role_Master_Id" ColumnName="Role_Master_Id" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="User_511" ColumnName="User_511" />
+          <ScalarProperty Name="UPI" ColumnName="UPI" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Middle_Initial" ColumnName="Middle_Initial" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubClinical_Intervention_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.SubClinical_Intervention_Master">
+        <MappingFragment StoreEntitySet="SubClinical_Intervention_Master">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Image_Master_Id" ColumnName="Image_Master_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="SubClinical_Intervention_Master_Id" ColumnName="SubClinical_Intervention_Master_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Journey_Pdf">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Journey_Pdf">
+        <MappingFragment StoreEntitySet="Journey_Pdf">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Pdf_Byte" ColumnName="Pdf_Byte" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+          <ScalarProperty Name="Brand_Id" ColumnName="Brand_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Year_Master">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Year_Master">
+        <MappingFragment StoreEntitySet="Year_Master">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Year_Name" ColumnName="Year_Name" />
+          <ScalarProperty Name="Year_Master_Id" ColumnName="Year_Master_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Journey_Pdf_TempData">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Journey_Pdf_TempData">
+        <MappingFragment StoreEntitySet="Journey_Pdf_TempData">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Brand_Id" ColumnName="Brand_Id" />
+          <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey">
+        <MappingFragment StoreEntitySet="Patient_Journey">
+          <ScalarProperty Name="Journey_Description" ColumnName="Journey_Description" />
+          <ScalarProperty Name="Approved_Date" ColumnName="Approved_Date" />
+          <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />
+          <ScalarProperty Name="Submitted_Date" ColumnName="Submitted_Date" />
+          <ScalarProperty Name="Submitted_By" ColumnName="Submitted_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Approver_Comments" ColumnName="Approver_Comments" />
+          <ScalarProperty Name="User_Comments" ColumnName="User_Comments" />
+          <ScalarProperty Name="Status_Master_Id" ColumnName="Status_Master_Id" />
+          <ScalarProperty Name="Country_Master_Id" ColumnName="Country_Master_Id" />
+          <ScalarProperty Name="Brand_Master_Id" ColumnName="Brand_Master_Id" />
+          <ScalarProperty Name="Journey_Title" ColumnName="Journey_Title" />
+          <ScalarProperty Name="Patient_Journey_Id" ColumnName="Patient_Journey_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Stages">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Stages">
+        <MappingFragment StoreEntitySet="Patient_Journey_Stages">
+          <ScalarProperty Name="Patient_Journey_Stages_Temp_Id" ColumnName="Patient_Journey_Stages_Temp_Id" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Time_Statistics" ColumnName="Time_Statistics" />
+          <ScalarProperty Name="Population_Statistics" ColumnName="Population_Statistics" />
+          <ScalarProperty Name="Stage_Display_Order" ColumnName="Stage_Display_Order" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Stage_Title" ColumnName="Stage_Title" />
+          <ScalarProperty Name="Stage_Master_Id" ColumnName="Stage_Master_Id" />
+          <ScalarProperty Name="Patient_Journey_Id" ColumnName="Patient_Journey_Id" />
+          <ScalarProperty Name="Patient_Journey_Stages_Id" ColumnName="Patient_Journey_Stages_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Stages_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Stages_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_Stages_Temp">
+          <ScalarProperty Name="Patient_Journey_Stages_Id" ColumnName="Patient_Journey_Stages_Id" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Time_Statistics" ColumnName="Time_Statistics" />
+          <ScalarProperty Name="Population_Statistics" ColumnName="Population_Statistics" />
+          <ScalarProperty Name="Stage_Display_Order" ColumnName="Stage_Display_Order" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Stage_Title" ColumnName="Stage_Title" />
+          <ScalarProperty Name="Stage_Master_Id" ColumnName="Stage_Master_Id" />
+          <ScalarProperty Name="Patient_Journey_Temp_Id" ColumnName="Patient_Journey_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Stages_Temp_Id" ColumnName="Patient_Journey_Stages_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Strategic_Moment">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Strategic_Moment">
+        <MappingFragment StoreEntitySet="Patient_Journey_Strategic_Moment">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Patient_Journey_Strategic_Moment_Temp_Id" ColumnName="Patient_Journey_Strategic_Moment_Temp_Id" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Patient_Journey_Id" ColumnName="Patient_Journey_Id" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Patient_Journey_End_Transaction_Id" ColumnName="Patient_Journey_End_Transaction_Id" />
+          <ScalarProperty Name="Patient_Journey_Start_Transaction_Id" ColumnName="Patient_Journey_Start_Transaction_Id" />
+          <ScalarProperty Name="Patient_Journey_End_Stage_Id" ColumnName="Patient_Journey_End_Stage_Id" />
+          <ScalarProperty Name="Patient_Journey_Start_Stage_Id" ColumnName="Patient_Journey_Start_Stage_Id" />
+          <ScalarProperty Name="Patient_Journey_Strategic_Moment_Id" ColumnName="Patient_Journey_Strategic_Moment_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Strategic_Moment_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Strategic_Moment_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_Strategic_Moment_Temp">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Patient_Journey_Temp_Id" ColumnName="Patient_Journey_Temp_Id" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Patient_Journey_End_Transaction_Temp_Id" ColumnName="Patient_Journey_End_Transaction_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Start_Transaction_Temp_Id" ColumnName="Patient_Journey_Start_Transaction_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_End_Stage_Temp_Id" ColumnName="Patient_Journey_End_Stage_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Start_Stage_Temp_Id" ColumnName="Patient_Journey_Start_Stage_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Strategic_Moment_Temp_Id" ColumnName="Patient_Journey_Strategic_Moment_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_Temp">
+          <ScalarProperty Name="Journey_Description" ColumnName="Journey_Description" />
+          <ScalarProperty Name="Approved_Date" ColumnName="Approved_Date" />
+          <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />
+          <ScalarProperty Name="Submitted_Date" ColumnName="Submitted_Date" />
+          <ScalarProperty Name="Submitted_By" ColumnName="Submitted_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Approver_Comments" ColumnName="Approver_Comments" />
+          <ScalarProperty Name="User_Comments" ColumnName="User_Comments" />
+          <ScalarProperty Name="Status_Master_Id" ColumnName="Status_Master_Id" />
+          <ScalarProperty Name="Country_Master_Id" ColumnName="Country_Master_Id" />
+          <ScalarProperty Name="Brand_Master_Id" ColumnName="Brand_Master_Id" />
+          <ScalarProperty Name="Patient_Journey_Id" ColumnName="Patient_Journey_Id" />
+          <ScalarProperty Name="Journey_Title" ColumnName="Journey_Title" />
+          <ScalarProperty Name="Patient_Journey_Temp_Id" ColumnName="Patient_Journey_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Trans_Clin_Interventions">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Trans_Clin_Interventions">
+        <MappingFragment StoreEntitySet="Patient_Journey_Trans_Clin_Interventions">
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Id" ColumnName="Patient_Journey_Transactions_Id" />
+          <ScalarProperty Name="Clinical_Intervention_Master_Id" ColumnName="Clinical_Intervention_Master_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Patient_Journey_Trans_Clin_Interventions_Id" ColumnName="Patient_Journey_Trans_Clin_Interventions_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Trans_Clin_Interventions_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Trans_Clin_Interventions_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_Trans_Clin_Interventions_Temp">
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+          <ScalarProperty Name="Clinical_Intervention_Master_Id" ColumnName="Clinical_Intervention_Master_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Patient_Journey_Trans_Clin_Interventions_Temp_Id" ColumnName="Patient_Journey_Trans_Clin_Interventions_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Trans_SubClin_Interventions">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Trans_SubClin_Interventions">
+        <MappingFragment StoreEntitySet="Patient_Journey_Trans_SubClin_Interventions">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubClinical_Intervention_Master_Id" ColumnName="SubClinical_Intervention_Master_Id" />
+          <ScalarProperty Name="Patient_Journey_Trans_Clin_Interventions_Id" ColumnName="Patient_Journey_Trans_Clin_Interventions_Id" />
+          <ScalarProperty Name="Patient_Journey_Trans_SubClin_Interventions_Id" ColumnName="Patient_Journey_Trans_SubClin_Interventions_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Trans_SubClin_Interventions_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Trans_SubClin_Interventions_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_Trans_SubClin_Interventions_Temp">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubClinical_Intervention_Master_Id" ColumnName="SubClinical_Intervention_Master_Id" />
+          <ScalarProperty Name="Patient_Journey_Trans_Clin_Interventions_Temp_Id" ColumnName="Patient_Journey_Trans_Clin_Interventions_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Trans_SubClin_Interventions_Temp_Id" ColumnName="Patient_Journey_Trans_SubClin_Interventions_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Transactions">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Transactions">
+        <MappingFragment StoreEntitySet="Patient_Journey_Transactions">
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+          <ScalarProperty Name="Viability_Evidence" ColumnName="Viability_Evidence" />
+          <ScalarProperty Name="Feasibility_Evidence" ColumnName="Feasibility_Evidence" />
+          <ScalarProperty Name="Payer_Evidence" ColumnName="Payer_Evidence" />
+          <ScalarProperty Name="HCP_Evidence" ColumnName="HCP_Evidence" />
+          <ScalarProperty Name="Patient_Evidence" ColumnName="Patient_Evidence" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Viability_Description" ColumnName="Viability_Description" />
+          <ScalarProperty Name="Feasibility_Description" ColumnName="Feasibility_Description" />
+          <ScalarProperty Name="Patient_Description" ColumnName="Patient_Description" />
+          <ScalarProperty Name="Payer_Description" ColumnName="Payer_Description" />
+          <ScalarProperty Name="HCP_Description" ColumnName="HCP_Description" />
+          <ScalarProperty Name="Viability_Rating" ColumnName="Viability_Rating" />
+          <ScalarProperty Name="Feasibility_Rating" ColumnName="Feasibility_Rating" />
+          <ScalarProperty Name="Patient_Rating" ColumnName="Patient_Rating" />
+          <ScalarProperty Name="Payer_Rating" ColumnName="Payer_Rating" />
+          <ScalarProperty Name="HCP_Rating" ColumnName="HCP_Rating" />
+          <ScalarProperty Name="Transaction_Location_Title" ColumnName="Transaction_Location_Title" />
+          <ScalarProperty Name="Transaction_Display_Order" ColumnName="Transaction_Display_Order" />
+          <ScalarProperty Name="Transaction_Location_Master_Id" ColumnName="Transaction_Location_Master_Id" />
+          <ScalarProperty Name="Transaction_Master_Id" ColumnName="Transaction_Master_Id" />
+          <ScalarProperty Name="Patient_Journey_Stages_Id" ColumnName="Patient_Journey_Stages_Id" />
+          <ScalarProperty Name="Patient_Journey_Id" ColumnName="Patient_Journey_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Transaction_Title" ColumnName="Transaction_Title" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Id" ColumnName="Patient_Journey_Transactions_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Transactions_AssociatedCosts">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Transactions_AssociatedCosts">
+        <MappingFragment StoreEntitySet="Patient_Journey_Transactions_AssociatedCosts">
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Id" ColumnName="Patient_Journey_Transactions_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AssociatedCosts" ColumnName="AssociatedCosts" />
+          <ScalarProperty Name="Patient_Journey_Transactions_AssociatedCosts_Id" ColumnName="Patient_Journey_Transactions_AssociatedCosts_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Transactions_AssociatedCosts_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Transactions_AssociatedCosts_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_Transactions_AssociatedCosts_Temp">
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AssociatedCosts" ColumnName="AssociatedCosts" />
+          <ScalarProperty Name="Patient_Journey_Transactions_AssociatedCosts_Temp_Id" ColumnName="Patient_Journey_Transactions_AssociatedCosts_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Transactions_DesiredOutcomes">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Transactions_DesiredOutcomes">
+        <MappingFragment StoreEntitySet="Patient_Journey_Transactions_DesiredOutcomes">
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="MODIFIED_Date" ColumnName="MODIFIED_Date" />
+          <ScalarProperty Name="MODIFIED_By" ColumnName="MODIFIED_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Id" ColumnName="Patient_Journey_Transactions_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DesiredOutcomes" ColumnName="DesiredOutcomes" />
+          <ScalarProperty Name="Patient_Journey_Transactions_DesiredOutcomes_Id" ColumnName="Patient_Journey_Transactions_DesiredOutcomes_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Transactions_DesiredOutcomes_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Transactions_DesiredOutcomes_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_Transactions_DesiredOutcomes_Temp">
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="MODIFIED_Date" ColumnName="MODIFIED_Date" />
+          <ScalarProperty Name="MODIFIED_By" ColumnName="MODIFIED_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DesiredOutcomes" ColumnName="DesiredOutcomes" />
+          <ScalarProperty Name="Patient_Journey_Transactions_DesiredOutcomes_Temp_Id" ColumnName="Patient_Journey_Transactions_DesiredOutcomes_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Transactions_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Transactions_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_Transactions_Temp">
+          <ScalarProperty Name="Patient_Journey_Transactions_Id" ColumnName="Patient_Journey_Transactions_Id" />
+          <ScalarProperty Name="Viability_Evidence" ColumnName="Viability_Evidence" />
+          <ScalarProperty Name="Feasibility_Evidence" ColumnName="Feasibility_Evidence" />
+          <ScalarProperty Name="Payer_Evidence" ColumnName="Payer_Evidence" />
+          <ScalarProperty Name="HCP_Evidence" ColumnName="HCP_Evidence" />
+          <ScalarProperty Name="Patient_Evidence" ColumnName="Patient_Evidence" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Viability_Description" ColumnName="Viability_Description" />
+          <ScalarProperty Name="Feasibility_Description" ColumnName="Feasibility_Description" />
+          <ScalarProperty Name="Patient_Description" ColumnName="Patient_Description" />
+          <ScalarProperty Name="Payer_Description" ColumnName="Payer_Description" />
+          <ScalarProperty Name="HCP_Description" ColumnName="HCP_Description" />
+          <ScalarProperty Name="Viability_Rating" ColumnName="Viability_Rating" />
+          <ScalarProperty Name="Feasibility_Rating" ColumnName="Feasibility_Rating" />
+          <ScalarProperty Name="Patient_Rating" ColumnName="Patient_Rating" />
+          <ScalarProperty Name="Payer_Rating" ColumnName="Payer_Rating" />
+          <ScalarProperty Name="HCP_Rating" ColumnName="HCP_Rating" />
+          <ScalarProperty Name="Transaction_Location_Title" ColumnName="Transaction_Location_Title" />
+          <ScalarProperty Name="Transaction_Display_Order" ColumnName="Transaction_Display_Order" />
+          <ScalarProperty Name="Transaction_Location_Master_Id" ColumnName="Transaction_Location_Master_Id" />
+          <ScalarProperty Name="Transaction_Master_Id" ColumnName="Transaction_Master_Id" />
+          <ScalarProperty Name="Patient_Journey_Stages_Temp_Id" ColumnName="Patient_Journey_Stages_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Temp_Id" ColumnName="Patient_Journey_Temp_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Transaction_Title" ColumnName="Transaction_Title" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_VersionDetails">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_VersionDetails">
+        <MappingFragment StoreEntitySet="Patient_Journey_VersionDetails">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Version_Comments" ColumnName="Version_Comments" />
+          <ScalarProperty Name="Version_Title" ColumnName="Version_Title" />
+          <ScalarProperty Name="Patient_Journey_Id" ColumnName="Patient_Journey_Id" />
+          <ScalarProperty Name="Patient_Journey_VersionDetails_Id" ColumnName="Patient_Journey_VersionDetails_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_VersionDetails_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_VersionDetails_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_VersionDetails_Temp">
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Version_Comments" ColumnName="Version_Comments" />
+          <ScalarProperty Name="Version_Title" ColumnName="Version_Title" />
+          <ScalarProperty Name="Patient_Journey_Temp_Id" ColumnName="Patient_Journey_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_VersionDetails_Temp_Id" ColumnName="Patient_Journey_VersionDetails_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_HCP_Insights">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_HCP_Insights">
+        <MappingFragment StoreEntitySet="Patient_Journey_HCP_Insights">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="HCP_Insights" ColumnName="HCP_Insights" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Id" ColumnName="Patient_Journey_Transactions_Id" />
+          <ScalarProperty Name="Patient_Journey_Id" ColumnName="Patient_Journey_Id" />
+          <ScalarProperty Name="Patient_Journey_HCP_Insights_Id" ColumnName="Patient_Journey_HCP_Insights_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_HCP_Insights_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_HCP_Insights_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_HCP_Insights_Temp">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="HCP_Insights" ColumnName="HCP_Insights" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Temp_Id" ColumnName="Patient_Journey_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_HCP_Insights_Temp_Id" ColumnName="Patient_Journey_HCP_Insights_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Patient_Insights">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Patient_Insights">
+        <MappingFragment StoreEntitySet="Patient_Journey_Patient_Insights">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="Patient_Insights" ColumnName="Patient_Insights" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Id" ColumnName="Patient_Journey_Transactions_Id" />
+          <ScalarProperty Name="Patient_Journey_Id" ColumnName="Patient_Journey_Id" />
+          <ScalarProperty Name="Patient_Journey_Patient_Insights_Id" ColumnName="Patient_Journey_Patient_Insights_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Patient_Insights_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Patient_Insights_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_Patient_Insights_Temp">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="Patient_Insights" ColumnName="Patient_Insights" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Temp_Id" ColumnName="Patient_Journey_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Patient_Insights_Temp_Id" ColumnName="Patient_Journey_Patient_Insights_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Payor_Insights">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Payor_Insights">
+        <MappingFragment StoreEntitySet="Patient_Journey_Payor_Insights">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="Payor_Insights" ColumnName="Payor_Insights" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Id" ColumnName="Patient_Journey_Transactions_Id" />
+          <ScalarProperty Name="Patient_Journey_Id" ColumnName="Patient_Journey_Id" />
+          <ScalarProperty Name="Patient_Journey_Payor_Insights_Id" ColumnName="Patient_Journey_Payor_Insights_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Journey_Payor_Insights_Temp">
+      <EntityTypeMapping TypeName="PatientSpectrumModel.Patient_Journey_Payor_Insights_Temp">
+        <MappingFragment StoreEntitySet="Patient_Journey_Payor_Insights_Temp">
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Evidence" ColumnName="Evidence" />
+          <ScalarProperty Name="Payor_Insights" ColumnName="Payor_Insights" />
+          <ScalarProperty Name="Patient_Journey_Transactions_Temp_Id" ColumnName="Patient_Journey_Transactions_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Temp_Id" ColumnName="Patient_Journey_Temp_Id" />
+          <ScalarProperty Name="Patient_Journey_Payor_Insights_Temp_Id" ColumnName="Patient_Journey_Payor_Insights_Temp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

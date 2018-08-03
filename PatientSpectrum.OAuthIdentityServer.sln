@@ -1,0 +1,133 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity Server", "Identity Server", "{832BD7CC-D107-46D6-9469-70097DD21A21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource Server", "Resource Server", "{7A245EE4-DB36-487C-B110-BA611DDC81EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientSpectrum.WebAPI", "PatientSpectrum.WebAPI\PatientSpectrum.WebAPI.csproj", "{9EDAD6FB-231A-4E1B-8CAC-F242F59BC3EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web API", "Web API", "{78929381-CC24-48B1-A382-C59EA6E6BF23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{88F3B1C8-669E-4082-A511-4AF2837CBFF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Model", "Business Model", "{AC7A63F0-7889-43E2-996F-A4B4C79D1379}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross Cutting", "Cross Cutting", "{547601D4-5432-4A10-9C94-CAA4A025986D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access", "Data Access", "{6A4155B8-D2CC-4FDE-8B0B-2473B0E669AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientJourney.BusinessModel", "PatientJourney.BusinessModel\PatientJourney.BusinessModel.csproj", "{A27FE86E-9FEC-4DDC-B8BB-A12ED3364522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientJourney.Business", "PatientJourney.Business\PatientJourney.Business.csproj", "{90C7F990-3620-4EFE-BF09-7E7AF169F245}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientJourney.GlobalConstants", "PatientJourney.GlobalConstants\PatientJourney.GlobalConstants.csproj", "{BB2D9ECB-0C6B-4D6E-812A-151E6DCEABD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientJourney.DataAccess", "PatientJourney.DataAccess\PatientJourney.DataAccess.csproj", "{C2F542AB-804A-44B5-9282-9A6B25C109F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientSpectrum.IdentityServer", "PatientSpectrum.IdentityServer\PatientSpectrum.IdentityServer.csproj", "{3A35A876-2ADE-4D0E-B394-E5173DB8CBBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientJourney.CrytoHelper", "PatientJourney.CrytoHelper\PatientJourney.CrytoHelper.csproj", "{339F143D-960F-4393-A450-EEC0575374B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{D2297A3D-D955-473D-A928-7EA6DD68ED6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientSpectrum.UnitTests", "PatientSpectrum.UnitTests\PatientSpectrum.UnitTests.csproj", "{64FC428E-6112-475C-AA91-51213A6E3806}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EDAD6FB-231A-4E1B-8CAC-F242F59BC3EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EDAD6FB-231A-4E1B-8CAC-F242F59BC3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EDAD6FB-231A-4E1B-8CAC-F242F59BC3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EDAD6FB-231A-4E1B-8CAC-F242F59BC3EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27FE86E-9FEC-4DDC-B8BB-A12ED3364522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27FE86E-9FEC-4DDC-B8BB-A12ED3364522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27FE86E-9FEC-4DDC-B8BB-A12ED3364522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27FE86E-9FEC-4DDC-B8BB-A12ED3364522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C7F990-3620-4EFE-BF09-7E7AF169F245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C7F990-3620-4EFE-BF09-7E7AF169F245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C7F990-3620-4EFE-BF09-7E7AF169F245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C7F990-3620-4EFE-BF09-7E7AF169F245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2D9ECB-0C6B-4D6E-812A-151E6DCEABD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2D9ECB-0C6B-4D6E-812A-151E6DCEABD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2D9ECB-0C6B-4D6E-812A-151E6DCEABD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2D9ECB-0C6B-4D6E-812A-151E6DCEABD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F542AB-804A-44B5-9282-9A6B25C109F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F542AB-804A-44B5-9282-9A6B25C109F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F542AB-804A-44B5-9282-9A6B25C109F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F542AB-804A-44B5-9282-9A6B25C109F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A35A876-2ADE-4D0E-B394-E5173DB8CBBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A35A876-2ADE-4D0E-B394-E5173DB8CBBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A35A876-2ADE-4D0E-B394-E5173DB8CBBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A35A876-2ADE-4D0E-B394-E5173DB8CBBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339F143D-960F-4393-A450-EEC0575374B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339F143D-960F-4393-A450-EEC0575374B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339F143D-960F-4393-A450-EEC0575374B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339F143D-960F-4393-A450-EEC0575374B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64FC428E-6112-475C-AA91-51213A6E3806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64FC428E-6112-475C-AA91-51213A6E3806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64FC428E-6112-475C-AA91-51213A6E3806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64FC428E-6112-475C-AA91-51213A6E3806}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9EDAD6FB-231A-4E1B-8CAC-F242F59BC3EE} = {78929381-CC24-48B1-A382-C59EA6E6BF23}
+		{78929381-CC24-48B1-A382-C59EA6E6BF23} = {7A245EE4-DB36-487C-B110-BA611DDC81EE}
+		{88F3B1C8-669E-4082-A511-4AF2837CBFF7} = {7A245EE4-DB36-487C-B110-BA611DDC81EE}
+		{AC7A63F0-7889-43E2-996F-A4B4C79D1379} = {7A245EE4-DB36-487C-B110-BA611DDC81EE}
+		{547601D4-5432-4A10-9C94-CAA4A025986D} = {7A245EE4-DB36-487C-B110-BA611DDC81EE}
+		{6A4155B8-D2CC-4FDE-8B0B-2473B0E669AC} = {7A245EE4-DB36-487C-B110-BA611DDC81EE}
+		{A27FE86E-9FEC-4DDC-B8BB-A12ED3364522} = {AC7A63F0-7889-43E2-996F-A4B4C79D1379}
+		{90C7F990-3620-4EFE-BF09-7E7AF169F245} = {88F3B1C8-669E-4082-A511-4AF2837CBFF7}
+		{BB2D9ECB-0C6B-4D6E-812A-151E6DCEABD0} = {547601D4-5432-4A10-9C94-CAA4A025986D}
+		{C2F542AB-804A-44B5-9282-9A6B25C109F3} = {6A4155B8-D2CC-4FDE-8B0B-2473B0E669AC}
+		{3A35A876-2ADE-4D0E-B394-E5173DB8CBBA} = {832BD7CC-D107-46D6-9469-70097DD21A21}
+		{339F143D-960F-4393-A450-EEC0575374B1} = {547601D4-5432-4A10-9C94-CAA4A025986D}
+		{64FC428E-6112-475C-AA91-51213A6E3806} = {D2297A3D-D955-473D-A928-7EA6DD68ED6B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cygnus.cognizant.com/tfs/abbvieinc
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PatientJourney.BusinessModel\\PatientJourney.BusinessModel.csproj
+		SccProjectTopLevelParentUniqueName1 = PatientSpectrum.OAuthIdentityServer.sln
+		SccProjectName1 = PatientJourney.BusinessModel
+		SccLocalPath1 = PatientJourney.BusinessModel
+		SccProjectUniqueName2 = PatientJourney.DataAccess\\PatientJourney.DataAccess.csproj
+		SccProjectTopLevelParentUniqueName2 = PatientSpectrum.OAuthIdentityServer.sln
+		SccProjectName2 = PatientJourney.DataAccess
+		SccLocalPath2 = PatientJourney.DataAccess
+		SccProjectUniqueName3 = PatientJourney.GlobalConstants\\PatientJourney.GlobalConstants.csproj
+		SccProjectTopLevelParentUniqueName3 = PatientSpectrum.OAuthIdentityServer.sln
+		SccProjectName3 = PatientJourney.GlobalConstants
+		SccLocalPath3 = PatientJourney.GlobalConstants
+		SccProjectUniqueName4 = PatientJourney.Business\\PatientJourney.Business.csproj
+		SccProjectTopLevelParentUniqueName4 = PatientSpectrum.OAuthIdentityServer.sln
+		SccProjectName4 = PatientJourney.Business
+		SccLocalPath4 = PatientJourney.Business
+		SccProjectUniqueName5 = PatientSpectrum.WebAPI\\PatientSpectrum.WebAPI.csproj
+		SccProjectTopLevelParentUniqueName5 = PatientSpectrum.OAuthIdentityServer.sln
+		SccProjectName5 = PatientSpectrum.WebAPI
+		SccLocalPath5 = PatientSpectrum.WebAPI
+		SccProjectUniqueName6 = PatientSpectrum.IdentityServer\\PatientSpectrum.IdentityServer.csproj
+		SccProjectTopLevelParentUniqueName6 = PatientSpectrum.OAuthIdentityServer.sln
+		SccProjectName6 = PatientSpectrum.IdentityServer
+		SccLocalPath6 = PatientSpectrum.IdentityServer
+		SccProjectUniqueName7 = PatientJourney.CrytoHelper\\PatientJourney.CrytoHelper.csproj
+		SccProjectTopLevelParentUniqueName7 = PatientSpectrum.OAuthIdentityServer.sln
+		SccProjectName7 = PatientJourney.CrytoHelper
+		SccLocalPath7 = PatientJourney.CrytoHelper
+		SccProjectUniqueName8 = PatientSpectrum.UnitTests\\PatientSpectrum.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName8 = PatientSpectrum.OAuthIdentityServer.sln
+		SccProjectName8 = PatientSpectrum.UnitTests
+		SccLocalPath8 = PatientSpectrum.UnitTests
+	EndGlobalSection
+EndGlobal

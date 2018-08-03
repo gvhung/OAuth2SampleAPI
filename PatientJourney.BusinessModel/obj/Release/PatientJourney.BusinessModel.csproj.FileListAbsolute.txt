@@ -1,0 +1,4 @@
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.BusinessModel\bin\Release\PatientJourney.BusinessModel.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.BusinessModel\bin\Release\PatientJourney.BusinessModel.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.BusinessModel\obj\Release\PatientJourney.BusinessModel.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.BusinessModel\obj\Release\PatientJourney.BusinessModel.pdb

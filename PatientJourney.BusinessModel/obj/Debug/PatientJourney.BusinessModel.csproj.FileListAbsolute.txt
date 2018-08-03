@@ -1,0 +1,5 @@
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.BusinessModel\bin\Debug\PatientJourney.BusinessModel.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.BusinessModel\bin\Debug\PatientJourney.BusinessModel.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.BusinessModel\obj\Debug\PatientJourney.BusinessModel.dll
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.BusinessModel\obj\Debug\PatientJourney.BusinessModel.pdb
+D:\Sample\PatientSpectrum.OAuthIdentityServer\PatientJourney.BusinessModel\obj\Debug\PatientJourney.BusinessModel.csprojResolveAssemblyReference.cache
